@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterPasswordScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var password: String = ""
+    @State var password: String = "qwerty"
     @State var confirmPassword: String = ""
     var body: some View {
         ZStack{
@@ -72,10 +72,20 @@ struct RegisterPasswordScreen: View {
                             
                           
                         } else {
-                            let registerBody = RegisterTechnicianBody();
-                            registerBody.phone = AppUtil.technicianNumber
-                            registerBody.password = password
-                            viewRouter.currentPage =  "TechnicianDashboard"
+                            
+                            AppUtil.registerBody?.password = password
+                            
+                            technicianApi.loginTechnician(AppUtil.registerBody!, success: { res in
+                                AppUtil.user = res.user
+                                AppUtil.idToken = res.token ?? ""
+                                viewRouter.currentPage =  "TechnicianDashboard"
+                            }, failure: { _ in
+                                
+                            })
+                            
+                            
+                           
+                           
                         }
                        
                     }).padding(.top)

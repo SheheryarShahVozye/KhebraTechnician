@@ -9,14 +9,23 @@ import SwiftUI
 
 struct TechnicianDashboard: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @State var availableCheck: Bool = AppUtil.user?.available ?? false
     var body: some View {
         ZStack{
             VStack{
                 HStack{
                    
-                    ToggleView(isOn: .constant(false)) {
-                        Color("137D3B") //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
+                    ToggleView(isOn: $availableCheck) {
+                        if availableCheck {
+                            Color("137D3B")
+                        } else {
+                            Color("B6BAC3")
+                        }
+                       //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
                     }.frame(width: 40, height: 30)
+                        .onTapGesture {
+                          
+                        }
                     Text("Available")
                         .font(.system(size: 14))
                         .fontWeight(.medium)
@@ -128,16 +137,35 @@ struct ToggleView<Content: View>: View {
                 .frame(width: reader.frame(in: .global).height)
                 .onTapGesture {
                     withAnimation {
-                        isOn.toggle()
+                        technicianApi.availableToggle(success: { res in
+                            if res.msg == "User is inactive now!" {
+                                isOn = false
+                            } else {
+                                isOn = true
+                            }
+                           
+                        }, failure: { _ in
+                            
+                        })
+                       
                     }
                 }.modifier(Swipe { direction in
                     if direction == .swipeLeft {
                         withAnimation() {
-                            isOn = true
+                            technicianApi.availableToggle(success: { _ in
+                                isOn = true
+                            }, failure: { _ in
+                                
+                            })
+                           
                         }
                     }else if direction == .swipeRight {
                         withAnimation() {
-                            isOn = false
+                            technicianApi.availableToggle(success: { _ in
+                                isOn = false
+                            }, failure: { _ in
+                                
+                            })
                         }
                     }
                 })

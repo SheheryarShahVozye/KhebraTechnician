@@ -21,6 +21,11 @@ class VerifyOtp: Codable {
     public var otp: Int?
 }
 
+class msgResponse: Codable {
+    public var msg: String?
+}
+
+
 class registerName: Codable {
     public var name: String?
 }
