@@ -1,0 +1,1148 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14BBA2F929066EED00744DDC /* KhebraTechnicianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA2F829066EED00744DDC /* KhebraTechnicianApp.swift */; };
+		14BBA2FB29066EED00744DDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA2FA29066EED00744DDC /* ContentView.swift */; };
+		14BBA2FD29066EF000744DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BBA2FC29066EF000744DDC /* Assets.xcassets */; };
+		14BBA30029066EF000744DDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BBA2FF29066EF000744DDC /* Preview Assets.xcassets */; };
+		14BBA30A29066EF000744DDC /* KhebraTechnicianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA30929066EF000744DDC /* KhebraTechnicianTests.swift */; };
+		14BBA31429066EF000744DDC /* KhebraTechnicianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA31329066EF000744DDC /* KhebraTechnicianUITests.swift */; };
+		14BBA31629066EF000744DDC /* KhebraTechnicianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA31529066EF000744DDC /* KhebraTechnicianUITestsLaunchTests.swift */; };
+		14BBA3272906715900744DDC /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3262906715900744DDC /* ViewRouter.swift */; };
+		14BBA32E2906729200744DDC /* technicianApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3282906729200744DDC /* technicianApi.swift */; };
+		14BBA32F2906729200744DDC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3292906729200744DDC /* LocationService.swift */; };
+		14BBA3302906729200744DDC /* customerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA32A2906729200744DDC /* customerApi.swift */; };
+		14BBA3312906729200744DDC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA32B2906729200744DDC /* ServiceManager.swift */; };
+		14BBA3322906729200744DDC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA32C2906729200744DDC /* Strings.swift */; };
+		14BBA3332906729200744DDC /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA32D2906729200744DDC /* AppUtil.swift */; };
+		14BBA33B2906734900744DDC /* RegisterPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3352906734900744DDC /* RegisterPasswordScreen.swift */; };
+		14BBA33C2906734900744DDC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3362906734900744DDC /* SplashScreen.swift */; };
+		14BBA33D2906734900744DDC /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3372906734900744DDC /* LoginScreen.swift */; };
+		14BBA33E2906734900744DDC /* VerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3382906734900744DDC /* VerificationScreen.swift */; };
+		14BBA33F2906734900744DDC /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3392906734900744DDC /* SignUpScreen.swift */; };
+		14BBA3402906734900744DDC /* AccountCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA33A2906734900744DDC /* AccountCompletion.swift */; };
+		14BBA349290676D400744DDC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA348290676D400744DDC /* ImagePicker.swift */; };
+		14BBA34C290676DF00744DDC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA34A290676DF00744DDC /* CustomTextField.swift */; };
+		14BBA34D290676DF00744DDC /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA34B290676DF00744DDC /* LoginTextField.swift */; };
+		14BBA34F290676ED00744DDC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA34E290676ED00744DDC /* CustomButton.swift */; };
+		14BBA352290676F600744DDC /* TopNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA350290676F600744DDC /* TopNavigation.swift */; };
+		14BBA353290676F600744DDC /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA351290676F600744DDC /* BottomNavigation.swift */; };
+		14BBA35A2906770000744DDC /* TechnicianCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3542906770000744DDC /* TechnicianCard.swift */; };
+		14BBA35B2906770000744DDC /* CustomerReviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3552906770000744DDC /* CustomerReviewCard.swift */; };
+		14BBA35C2906770000744DDC /* DashboardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3562906770000744DDC /* DashboardCard.swift */; };
+		14BBA35D2906770000744DDC /* MoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3572906770000744DDC /* MoreCard.swift */; };
+		14BBA35E2906770000744DDC /* SocialCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3582906770000744DDC /* SocialCard.swift */; };
+		14BBA35F2906770000744DDC /* MyOrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3592906770000744DDC /* MyOrderCard.swift */; };
+		14BBA3632906772A00744DDC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3602906772A00744DDC /* MapView.swift */; };
+		14BBA3642906772A00744DDC /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3612906772A00744DDC /* MapViewControllerBridge.swift */; };
+		14BBA3652906772A00744DDC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3622906772A00744DDC /* MapViewController.swift */; };
+		14BBA36C290678DD00744DDC /* OrderDashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA369290678DC00744DDC /* OrderDashboardScreen.swift */; };
+		14BBA36D290678DD00744DDC /* TechnicianDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA36A290678DC00744DDC /* TechnicianDashboard.swift */; };
+		14BBA36E290678DD00744DDC /* NotificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA36B290678DD00744DDC /* NotificationScreen.swift */; };
+		14BBA376290678E800744DDC /* NewInvoiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA36F290678E800744DDC /* NewInvoiceScreen.swift */; };
+		14BBA377290678E800744DDC /* OrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA370290678E800744DDC /* OrderLocation.swift */; };
+		14BBA378290678E800744DDC /* CompletedOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA371290678E800744DDC /* CompletedOrderScreen.swift */; };
+		14BBA379290678E800744DDC /* DeferredOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA372290678E800744DDC /* DeferredOrderScreen.swift */; };
+		14BBA37A290678E800744DDC /* IncomingOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA373290678E800744DDC /* IncomingOrderScreen.swift */; };
+		14BBA37B290678E800744DDC /* InvoiceDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA374290678E800744DDC /* InvoiceDetailScreen.swift */; };
+		14BBA37C290678E800744DDC /* NewOrderDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA375290678E800744DDC /* NewOrderDetailScreen.swift */; };
+		14BBA385290678F400744DDC /* IncentivePenaltyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA37D290678F400744DDC /* IncentivePenaltyScreen.swift */; };
+		14BBA386290678F400744DDC /* IncomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA37E290678F400744DDC /* IncomeScreen.swift */; };
+		14BBA387290678F400744DDC /* TechProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA37F290678F400744DDC /* TechProfileScreen.swift */; };
+		14BBA388290678F400744DDC /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA380290678F400744DDC /* SettingScreen.swift */; };
+		14BBA389290678F400744DDC /* HowToUseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA381290678F400744DDC /* HowToUseScreen.swift */; };
+		14BBA38A290678F400744DDC /* TechMoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA382290678F400744DDC /* TechMoreScreen.swift */; };
+		14BBA38B290678F400744DDC /* RatingFactorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA383290678F400744DDC /* RatingFactorScreen.swift */; };
+		14BBA38C290678F400744DDC /* InvoiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA384290678F400744DDC /* InvoiceScreen.swift */; };
+		14BBA39629067D2700744DDC /* OffersCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA38D29067D2700744DDC /* OffersCard.swift */; };
+		14BBA39729067D2700744DDC /* NotificationCrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA38E29067D2700744DDC /* NotificationCrd.swift */; };
+		14BBA39829067D2700744DDC /* TechOrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA38F29067D2700744DDC /* TechOrderCard.swift */; };
+		14BBA39929067D2700744DDC /* TechOrderDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39029067D2700744DDC /* TechOrderDetailCard.swift */; };
+		14BBA39A29067D2700744DDC /* PointCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39129067D2700744DDC /* PointCard.swift */; };
+		14BBA39B29067D2700744DDC /* FavTechnicianCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39229067D2700744DDC /* FavTechnicianCard.swift */; };
+		14BBA39C29067D2700744DDC /* OrderNumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39329067D2700744DDC /* OrderNumCard.swift */; };
+		14BBA39D29067D2700744DDC /* ConnectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39429067D2700744DDC /* ConnectCard.swift */; };
+		14BBA39E29067D2700744DDC /* AgreementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39529067D2700744DDC /* AgreementCard.swift */; };
+		14BBA3A02906826E00744DDC /* BottomNavTechnician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA39F2906826E00744DDC /* BottomNavTechnician.swift */; };
+		14BBA3A52906835900744DDC /* CustomerSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A12906835900744DDC /* CustomerSignUp.swift */; };
+		14BBA3A62906835900744DDC /* profileBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A22906835900744DDC /* profileBody.swift */; };
+		14BBA3A72906835900744DDC /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A32906835900744DDC /* Services.swift */; };
+		14BBA3A82906835900744DDC /* CreateOrderBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A42906835900744DDC /* CreateOrderBody.swift */; };
+		14BBA3AA2906852700744DDC /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A92906852700744DDC /* OrderButton.swift */; };
+		14BBA3AC2906856100744DDC /* InvoiceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3AB2906856100744DDC /* InvoiceTextField.swift */; };
+		1F72C48193B71835449718AC /* Pods_KhebraTechnicianTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EA1573F6EA9E1C8BCFF602 /* Pods_KhebraTechnicianTests.framework */; };
+		9220503A846754B6FD3924E2 /* Pods_KhebraTechnician.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */; };
+		D5B151D0353A1A774B2AD2D9 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14BBA30629066EF000744DDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14BBA2ED29066EED00744DDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BBA2F429066EED00744DDC;
+			remoteInfo = KhebraTechnician;
+		};
+		14BBA31029066EF000744DDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14BBA2ED29066EED00744DDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BBA2F429066EED00744DDC;
+			remoteInfo = KhebraTechnician;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D40AB0EC990FA9E643FB052 /* Pods-KhebraTechnician-KhebraTechnicianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnician-KhebraTechnicianUITests.release.xcconfig"; path = "Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests.release.xcconfig"; sourceTree = "<group>"; };
+		14BBA2F529066EED00744DDC /* KhebraTechnician.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhebraTechnician.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BBA2F829066EED00744DDC /* KhebraTechnicianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhebraTechnicianApp.swift; sourceTree = "<group>"; };
+		14BBA2FA29066EED00744DDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		14BBA2FC29066EF000744DDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14BBA2FF29066EF000744DDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14BBA30529066EF000744DDC /* KhebraTechnicianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhebraTechnicianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BBA30929066EF000744DDC /* KhebraTechnicianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhebraTechnicianTests.swift; sourceTree = "<group>"; };
+		14BBA30F29066EF000744DDC /* KhebraTechnicianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhebraTechnicianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BBA31329066EF000744DDC /* KhebraTechnicianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhebraTechnicianUITests.swift; sourceTree = "<group>"; };
+		14BBA31529066EF000744DDC /* KhebraTechnicianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhebraTechnicianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14BBA3262906715900744DDC /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		14BBA3282906729200744DDC /* technicianApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = technicianApi.swift; sourceTree = "<group>"; };
+		14BBA3292906729200744DDC /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		14BBA32A2906729200744DDC /* customerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerApi.swift; sourceTree = "<group>"; };
+		14BBA32B2906729200744DDC /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		14BBA32C2906729200744DDC /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		14BBA32D2906729200744DDC /* AppUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
+		14BBA3352906734900744DDC /* RegisterPasswordScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPasswordScreen.swift; sourceTree = "<group>"; };
+		14BBA3362906734900744DDC /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		14BBA3372906734900744DDC /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		14BBA3382906734900744DDC /* VerificationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationScreen.swift; sourceTree = "<group>"; };
+		14BBA3392906734900744DDC /* SignUpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		14BBA33A2906734900744DDC /* AccountCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCompletion.swift; sourceTree = "<group>"; };
+		14BBA348290676D400744DDC /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		14BBA34A290676DF00744DDC /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		14BBA34B290676DF00744DDC /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		14BBA34E290676ED00744DDC /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		14BBA350290676F600744DDC /* TopNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNavigation.swift; sourceTree = "<group>"; };
+		14BBA351290676F600744DDC /* BottomNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
+		14BBA3542906770000744DDC /* TechnicianCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicianCard.swift; sourceTree = "<group>"; };
+		14BBA3552906770000744DDC /* CustomerReviewCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerReviewCard.swift; sourceTree = "<group>"; };
+		14BBA3562906770000744DDC /* DashboardCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCard.swift; sourceTree = "<group>"; };
+		14BBA3572906770000744DDC /* MoreCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCard.swift; sourceTree = "<group>"; };
+		14BBA3582906770000744DDC /* SocialCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCard.swift; sourceTree = "<group>"; };
+		14BBA3592906770000744DDC /* MyOrderCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCard.swift; sourceTree = "<group>"; };
+		14BBA3602906772A00744DDC /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		14BBA3612906772A00744DDC /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
+		14BBA3622906772A00744DDC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		14BBA369290678DC00744DDC /* OrderDashboardScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDashboardScreen.swift; sourceTree = "<group>"; };
+		14BBA36A290678DC00744DDC /* TechnicianDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicianDashboard.swift; sourceTree = "<group>"; };
+		14BBA36B290678DD00744DDC /* NotificationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScreen.swift; sourceTree = "<group>"; };
+		14BBA36F290678E800744DDC /* NewInvoiceScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInvoiceScreen.swift; sourceTree = "<group>"; };
+		14BBA370290678E800744DDC /* OrderLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocation.swift; sourceTree = "<group>"; };
+		14BBA371290678E800744DDC /* CompletedOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedOrderScreen.swift; sourceTree = "<group>"; };
+		14BBA372290678E800744DDC /* DeferredOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeferredOrderScreen.swift; sourceTree = "<group>"; };
+		14BBA373290678E800744DDC /* IncomingOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingOrderScreen.swift; sourceTree = "<group>"; };
+		14BBA374290678E800744DDC /* InvoiceDetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceDetailScreen.swift; sourceTree = "<group>"; };
+		14BBA375290678E800744DDC /* NewOrderDetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderDetailScreen.swift; sourceTree = "<group>"; };
+		14BBA37D290678F400744DDC /* IncentivePenaltyScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncentivePenaltyScreen.swift; sourceTree = "<group>"; };
+		14BBA37E290678F400744DDC /* IncomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeScreen.swift; sourceTree = "<group>"; };
+		14BBA37F290678F400744DDC /* TechProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechProfileScreen.swift; sourceTree = "<group>"; };
+		14BBA380290678F400744DDC /* SettingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
+		14BBA381290678F400744DDC /* HowToUseScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToUseScreen.swift; sourceTree = "<group>"; };
+		14BBA382290678F400744DDC /* TechMoreScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechMoreScreen.swift; sourceTree = "<group>"; };
+		14BBA383290678F400744DDC /* RatingFactorScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingFactorScreen.swift; sourceTree = "<group>"; };
+		14BBA384290678F400744DDC /* InvoiceScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceScreen.swift; sourceTree = "<group>"; };
+		14BBA38D29067D2700744DDC /* OffersCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersCard.swift; sourceTree = "<group>"; };
+		14BBA38E29067D2700744DDC /* NotificationCrd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCrd.swift; sourceTree = "<group>"; };
+		14BBA38F29067D2700744DDC /* TechOrderCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechOrderCard.swift; sourceTree = "<group>"; };
+		14BBA39029067D2700744DDC /* TechOrderDetailCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechOrderDetailCard.swift; sourceTree = "<group>"; };
+		14BBA39129067D2700744DDC /* PointCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointCard.swift; sourceTree = "<group>"; };
+		14BBA39229067D2700744DDC /* FavTechnicianCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavTechnicianCard.swift; sourceTree = "<group>"; };
+		14BBA39329067D2700744DDC /* OrderNumCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNumCard.swift; sourceTree = "<group>"; };
+		14BBA39429067D2700744DDC /* ConnectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectCard.swift; sourceTree = "<group>"; };
+		14BBA39529067D2700744DDC /* AgreementCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementCard.swift; sourceTree = "<group>"; };
+		14BBA39F2906826E00744DDC /* BottomNavTechnician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomNavTechnician.swift; sourceTree = "<group>"; };
+		14BBA3A12906835900744DDC /* CustomerSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSignUp.swift; sourceTree = "<group>"; };
+		14BBA3A22906835900744DDC /* profileBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileBody.swift; sourceTree = "<group>"; };
+		14BBA3A32906835900744DDC /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		14BBA3A42906835900744DDC /* CreateOrderBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrderBody.swift; sourceTree = "<group>"; };
+		14BBA3A92906852700744DDC /* OrderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
+		14BBA3AB2906856100744DDC /* InvoiceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceTextField.swift; sourceTree = "<group>"; };
+		1C1C5550B6689FCD72A78467 /* Pods-KhebraTechnicianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnicianTests.debug.xcconfig"; path = "Target Support Files/Pods-KhebraTechnicianTests/Pods-KhebraTechnicianTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician_KhebraTechnicianUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67EA1573F6EA9E1C8BCFF602 /* Pods_KhebraTechnicianTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnicianTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF57F678259BD6DAC8675C8 /* Pods-KhebraTechnician.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnician.debug.xcconfig"; path = "Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician.debug.xcconfig"; sourceTree = "<group>"; };
+		A83DC09333C5DF14313EAB59 /* Pods-KhebraTechnician-KhebraTechnicianUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnician-KhebraTechnicianUITests.debug.xcconfig"; path = "Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A85FB6159AC64157F0CE80F4 /* Pods-KhebraTechnicianTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnicianTests.release.xcconfig"; path = "Target Support Files/Pods-KhebraTechnicianTests/Pods-KhebraTechnicianTests.release.xcconfig"; sourceTree = "<group>"; };
+		D443A78490E739F6620ACC75 /* Pods-KhebraTechnician.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnician.release.xcconfig"; path = "Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14BBA2F229066EED00744DDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9220503A846754B6FD3924E2 /* Pods_KhebraTechnician.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30229066EF000744DDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F72C48193B71835449718AC /* Pods_KhebraTechnicianTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30C29066EF000744DDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B151D0353A1A774B2AD2D9 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14BBA2EC29066EED00744DDC = {
+			isa = PBXGroup;
+			children = (
+				14BBA2F729066EED00744DDC /* KhebraTechnician */,
+				14BBA30829066EF000744DDC /* KhebraTechnicianTests */,
+				14BBA31229066EF000744DDC /* KhebraTechnicianUITests */,
+				14BBA2F629066EED00744DDC /* Products */,
+				F4646DC1776B6684C125121B /* Pods */,
+				4C7121220F74E4AA2A48B961 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14BBA2F629066EED00744DDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA2F529066EED00744DDC /* KhebraTechnician.app */,
+				14BBA30529066EF000744DDC /* KhebraTechnicianTests.xctest */,
+				14BBA30F29066EF000744DDC /* KhebraTechnicianUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14BBA2F729066EED00744DDC /* KhebraTechnician */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3252906713000744DDC /* Models */,
+				14BBA3242906700000744DDC /* Views */,
+				14BBA32329066FED00744DDC /* Utills */,
+				14BBA32229066FE600744DDC /* Observables */,
+				14BBA2F829066EED00744DDC /* KhebraTechnicianApp.swift */,
+				14BBA2FA29066EED00744DDC /* ContentView.swift */,
+				14BBA2FC29066EF000744DDC /* Assets.xcassets */,
+				14BBA2FE29066EF000744DDC /* Preview Content */,
+			);
+			path = KhebraTechnician;
+			sourceTree = "<group>";
+		};
+		14BBA2FE29066EF000744DDC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA2FF29066EF000744DDC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14BBA30829066EF000744DDC /* KhebraTechnicianTests */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA30929066EF000744DDC /* KhebraTechnicianTests.swift */,
+			);
+			path = KhebraTechnicianTests;
+			sourceTree = "<group>";
+		};
+		14BBA31229066EF000744DDC /* KhebraTechnicianUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA31329066EF000744DDC /* KhebraTechnicianUITests.swift */,
+				14BBA31529066EF000744DDC /* KhebraTechnicianUITestsLaunchTests.swift */,
+			);
+			path = KhebraTechnicianUITests;
+			sourceTree = "<group>";
+		};
+		14BBA32229066FE600744DDC /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3262906715900744DDC /* ViewRouter.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		14BBA32329066FED00744DDC /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA32D2906729200744DDC /* AppUtil.swift */,
+				14BBA32A2906729200744DDC /* customerApi.swift */,
+				14BBA3292906729200744DDC /* LocationService.swift */,
+				14BBA32B2906729200744DDC /* ServiceManager.swift */,
+				14BBA32C2906729200744DDC /* Strings.swift */,
+				14BBA3282906729200744DDC /* technicianApi.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
+		14BBA3242906700000744DDC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3682906785E00744DDC /* ProfileScreen */,
+				14BBA3672906784500744DDC /* Orders */,
+				14BBA3662906783D00744DDC /* Dashboard */,
+				14BBA347290676A700744DDC /* ImagePickerViews */,
+				14BBA3422906746200744DDC /* Components */,
+				14BBA3412906745D00744DDC /* Map */,
+				14BBA3342906730300744DDC /* Accounts */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		14BBA3252906713000744DDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3A42906835900744DDC /* CreateOrderBody.swift */,
+				14BBA3A12906835900744DDC /* CustomerSignUp.swift */,
+				14BBA3A22906835900744DDC /* profileBody.swift */,
+				14BBA3A32906835900744DDC /* Services.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		14BBA3342906730300744DDC /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA33A2906734900744DDC /* AccountCompletion.swift */,
+				14BBA3372906734900744DDC /* LoginScreen.swift */,
+				14BBA3352906734900744DDC /* RegisterPasswordScreen.swift */,
+				14BBA3392906734900744DDC /* SignUpScreen.swift */,
+				14BBA3362906734900744DDC /* SplashScreen.swift */,
+				14BBA3382906734900744DDC /* VerificationScreen.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		14BBA3412906745D00744DDC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3602906772A00744DDC /* MapView.swift */,
+				14BBA3622906772A00744DDC /* MapViewController.swift */,
+				14BBA3612906772A00744DDC /* MapViewControllerBridge.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		14BBA3422906746200744DDC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3462906750200744DDC /* Textfields */,
+				14BBA345290674F800744DDC /* Buttons */,
+				14BBA344290674ED00744DDC /* General */,
+				14BBA343290674E100744DDC /* Cards */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14BBA343290674E100744DDC /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA39529067D2700744DDC /* AgreementCard.swift */,
+				14BBA39429067D2700744DDC /* ConnectCard.swift */,
+				14BBA39229067D2700744DDC /* FavTechnicianCard.swift */,
+				14BBA38E29067D2700744DDC /* NotificationCrd.swift */,
+				14BBA38D29067D2700744DDC /* OffersCard.swift */,
+				14BBA39329067D2700744DDC /* OrderNumCard.swift */,
+				14BBA39129067D2700744DDC /* PointCard.swift */,
+				14BBA38F29067D2700744DDC /* TechOrderCard.swift */,
+				14BBA39029067D2700744DDC /* TechOrderDetailCard.swift */,
+				14BBA3552906770000744DDC /* CustomerReviewCard.swift */,
+				14BBA3562906770000744DDC /* DashboardCard.swift */,
+				14BBA3572906770000744DDC /* MoreCard.swift */,
+				14BBA3592906770000744DDC /* MyOrderCard.swift */,
+				14BBA3582906770000744DDC /* SocialCard.swift */,
+				14BBA3542906770000744DDC /* TechnicianCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		14BBA344290674ED00744DDC /* General */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA39F2906826E00744DDC /* BottomNavTechnician.swift */,
+				14BBA351290676F600744DDC /* BottomNavigation.swift */,
+				14BBA350290676F600744DDC /* TopNavigation.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		14BBA345290674F800744DDC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3A92906852700744DDC /* OrderButton.swift */,
+				14BBA34E290676ED00744DDC /* CustomButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		14BBA3462906750200744DDC /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA3AB2906856100744DDC /* InvoiceTextField.swift */,
+				14BBA34A290676DF00744DDC /* CustomTextField.swift */,
+				14BBA34B290676DF00744DDC /* LoginTextField.swift */,
+			);
+			path = Textfields;
+			sourceTree = "<group>";
+		};
+		14BBA347290676A700744DDC /* ImagePickerViews */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA348290676D400744DDC /* ImagePicker.swift */,
+			);
+			path = ImagePickerViews;
+			sourceTree = "<group>";
+		};
+		14BBA3662906783D00744DDC /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA36B290678DD00744DDC /* NotificationScreen.swift */,
+				14BBA369290678DC00744DDC /* OrderDashboardScreen.swift */,
+				14BBA36A290678DC00744DDC /* TechnicianDashboard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		14BBA3672906784500744DDC /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA371290678E800744DDC /* CompletedOrderScreen.swift */,
+				14BBA372290678E800744DDC /* DeferredOrderScreen.swift */,
+				14BBA373290678E800744DDC /* IncomingOrderScreen.swift */,
+				14BBA374290678E800744DDC /* InvoiceDetailScreen.swift */,
+				14BBA36F290678E800744DDC /* NewInvoiceScreen.swift */,
+				14BBA375290678E800744DDC /* NewOrderDetailScreen.swift */,
+				14BBA370290678E800744DDC /* OrderLocation.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		14BBA3682906785E00744DDC /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				14BBA381290678F400744DDC /* HowToUseScreen.swift */,
+				14BBA37D290678F400744DDC /* IncentivePenaltyScreen.swift */,
+				14BBA37E290678F400744DDC /* IncomeScreen.swift */,
+				14BBA384290678F400744DDC /* InvoiceScreen.swift */,
+				14BBA383290678F400744DDC /* RatingFactorScreen.swift */,
+				14BBA380290678F400744DDC /* SettingScreen.swift */,
+				14BBA382290678F400744DDC /* TechMoreScreen.swift */,
+				14BBA37F290678F400744DDC /* TechProfileScreen.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		4C7121220F74E4AA2A48B961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */,
+				5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */,
+				67EA1573F6EA9E1C8BCFF602 /* Pods_KhebraTechnicianTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4646DC1776B6684C125121B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DF57F678259BD6DAC8675C8 /* Pods-KhebraTechnician.debug.xcconfig */,
+				D443A78490E739F6620ACC75 /* Pods-KhebraTechnician.release.xcconfig */,
+				A83DC09333C5DF14313EAB59 /* Pods-KhebraTechnician-KhebraTechnicianUITests.debug.xcconfig */,
+				0D40AB0EC990FA9E643FB052 /* Pods-KhebraTechnician-KhebraTechnicianUITests.release.xcconfig */,
+				1C1C5550B6689FCD72A78467 /* Pods-KhebraTechnicianTests.debug.xcconfig */,
+				A85FB6159AC64157F0CE80F4 /* Pods-KhebraTechnicianTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14BBA2F429066EED00744DDC /* KhebraTechnician */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BBA31929066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnician" */;
+			buildPhases = (
+				4589310FC9E3F09002077931 /* [CP] Check Pods Manifest.lock */,
+				14BBA2F129066EED00744DDC /* Sources */,
+				14BBA2F229066EED00744DDC /* Frameworks */,
+				14BBA2F329066EED00744DDC /* Resources */,
+				98B9C7E04773A13F42B3B375 /* [CP] Embed Pods Frameworks */,
+				D7EE5E5DB393E4742149990C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KhebraTechnician;
+			productName = KhebraTechnician;
+			productReference = 14BBA2F529066EED00744DDC /* KhebraTechnician.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14BBA30429066EF000744DDC /* KhebraTechnicianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BBA31C29066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnicianTests" */;
+			buildPhases = (
+				94CB94C544DB12D7694C54B6 /* [CP] Check Pods Manifest.lock */,
+				14BBA30129066EF000744DDC /* Sources */,
+				14BBA30229066EF000744DDC /* Frameworks */,
+				14BBA30329066EF000744DDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14BBA30729066EF000744DDC /* PBXTargetDependency */,
+			);
+			name = KhebraTechnicianTests;
+			productName = KhebraTechnicianTests;
+			productReference = 14BBA30529066EF000744DDC /* KhebraTechnicianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14BBA30E29066EF000744DDC /* KhebraTechnicianUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BBA31F29066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnicianUITests" */;
+			buildPhases = (
+				C1358E4E8BA54CBBE09FCD69 /* [CP] Check Pods Manifest.lock */,
+				14BBA30B29066EF000744DDC /* Sources */,
+				14BBA30C29066EF000744DDC /* Frameworks */,
+				14BBA30D29066EF000744DDC /* Resources */,
+				EEC83B1AF6011FDED1BCB308 /* [CP] Embed Pods Frameworks */,
+				6AB0586A7813BF37E55CD886 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14BBA31129066EF000744DDC /* PBXTargetDependency */,
+			);
+			name = KhebraTechnicianUITests;
+			productName = KhebraTechnicianUITests;
+			productReference = 14BBA30F29066EF000744DDC /* KhebraTechnicianUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14BBA2ED29066EED00744DDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					14BBA2F429066EED00744DDC = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					14BBA30429066EF000744DDC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 14BBA2F429066EED00744DDC;
+					};
+					14BBA30E29066EF000744DDC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 14BBA2F429066EED00744DDC;
+					};
+				};
+			};
+			buildConfigurationList = 14BBA2F029066EED00744DDC /* Build configuration list for PBXProject "KhebraTechnician" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14BBA2EC29066EED00744DDC;
+			productRefGroup = 14BBA2F629066EED00744DDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14BBA2F429066EED00744DDC /* KhebraTechnician */,
+				14BBA30429066EF000744DDC /* KhebraTechnicianTests */,
+				14BBA30E29066EF000744DDC /* KhebraTechnicianUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14BBA2F329066EED00744DDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BBA30029066EF000744DDC /* Preview Assets.xcassets in Resources */,
+				14BBA2FD29066EF000744DDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30329066EF000744DDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30D29066EF000744DDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4589310FC9E3F09002077931 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhebraTechnician-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AB0586A7813BF37E55CD886 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94CB94C544DB12D7694C54B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhebraTechnicianTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98B9C7E04773A13F42B3B375 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1358E4E8BA54CBBE09FCD69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhebraTechnician-KhebraTechnicianUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EE5E5DB393E4742149990C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician/Pods-KhebraTechnician-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEC83B1AF6011FDED1BCB308 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhebraTechnician-KhebraTechnicianUITests/Pods-KhebraTechnician-KhebraTechnicianUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14BBA2F129066EED00744DDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BBA3272906715900744DDC /* ViewRouter.swift in Sources */,
+				14BBA34F290676ED00744DDC /* CustomButton.swift in Sources */,
+				14BBA2FB29066EED00744DDC /* ContentView.swift in Sources */,
+				14BBA35A2906770000744DDC /* TechnicianCard.swift in Sources */,
+				14BBA3322906729200744DDC /* Strings.swift in Sources */,
+				14BBA36C290678DD00744DDC /* OrderDashboardScreen.swift in Sources */,
+				14BBA3A72906835900744DDC /* Services.swift in Sources */,
+				14BBA3AC2906856100744DDC /* InvoiceTextField.swift in Sources */,
+				14BBA32F2906729200744DDC /* LocationService.swift in Sources */,
+				14BBA35F2906770000744DDC /* MyOrderCard.swift in Sources */,
+				14BBA32E2906729200744DDC /* technicianApi.swift in Sources */,
+				14BBA39929067D2700744DDC /* TechOrderDetailCard.swift in Sources */,
+				14BBA33D2906734900744DDC /* LoginScreen.swift in Sources */,
+				14BBA35C2906770000744DDC /* DashboardCard.swift in Sources */,
+				14BBA38C290678F400744DDC /* InvoiceScreen.swift in Sources */,
+				14BBA33E2906734900744DDC /* VerificationScreen.swift in Sources */,
+				14BBA35E2906770000744DDC /* SocialCard.swift in Sources */,
+				14BBA35D2906770000744DDC /* MoreCard.swift in Sources */,
+				14BBA386290678F400744DDC /* IncomeScreen.swift in Sources */,
+				14BBA39629067D2700744DDC /* OffersCard.swift in Sources */,
+				14BBA3652906772A00744DDC /* MapViewController.swift in Sources */,
+				14BBA39C29067D2700744DDC /* OrderNumCard.swift in Sources */,
+				14BBA353290676F600744DDC /* BottomNavigation.swift in Sources */,
+				14BBA385290678F400744DDC /* IncentivePenaltyScreen.swift in Sources */,
+				14BBA3302906729200744DDC /* customerApi.swift in Sources */,
+				14BBA3A52906835900744DDC /* CustomerSignUp.swift in Sources */,
+				14BBA34C290676DF00744DDC /* CustomTextField.swift in Sources */,
+				14BBA39D29067D2700744DDC /* ConnectCard.swift in Sources */,
+				14BBA377290678E800744DDC /* OrderLocation.swift in Sources */,
+				14BBA36D290678DD00744DDC /* TechnicianDashboard.swift in Sources */,
+				14BBA39B29067D2700744DDC /* FavTechnicianCard.swift in Sources */,
+				14BBA37A290678E800744DDC /* IncomingOrderScreen.swift in Sources */,
+				14BBA34D290676DF00744DDC /* LoginTextField.swift in Sources */,
+				14BBA389290678F400744DDC /* HowToUseScreen.swift in Sources */,
+				14BBA37C290678E800744DDC /* NewOrderDetailScreen.swift in Sources */,
+				14BBA39729067D2700744DDC /* NotificationCrd.swift in Sources */,
+				14BBA33C2906734900744DDC /* SplashScreen.swift in Sources */,
+				14BBA3A62906835900744DDC /* profileBody.swift in Sources */,
+				14BBA38B290678F400744DDC /* RatingFactorScreen.swift in Sources */,
+				14BBA35B2906770000744DDC /* CustomerReviewCard.swift in Sources */,
+				14BBA39A29067D2700744DDC /* PointCard.swift in Sources */,
+				14BBA3AA2906852700744DDC /* OrderButton.swift in Sources */,
+				14BBA36E290678DD00744DDC /* NotificationScreen.swift in Sources */,
+				14BBA39829067D2700744DDC /* TechOrderCard.swift in Sources */,
+				14BBA3402906734900744DDC /* AccountCompletion.swift in Sources */,
+				14BBA352290676F600744DDC /* TopNavigation.swift in Sources */,
+				14BBA39E29067D2700744DDC /* AgreementCard.swift in Sources */,
+				14BBA3A02906826E00744DDC /* BottomNavTechnician.swift in Sources */,
+				14BBA379290678E800744DDC /* DeferredOrderScreen.swift in Sources */,
+				14BBA3632906772A00744DDC /* MapView.swift in Sources */,
+				14BBA388290678F400744DDC /* SettingScreen.swift in Sources */,
+				14BBA376290678E800744DDC /* NewInvoiceScreen.swift in Sources */,
+				14BBA387290678F400744DDC /* TechProfileScreen.swift in Sources */,
+				14BBA33F2906734900744DDC /* SignUpScreen.swift in Sources */,
+				14BBA3332906729200744DDC /* AppUtil.swift in Sources */,
+				14BBA378290678E800744DDC /* CompletedOrderScreen.swift in Sources */,
+				14BBA3312906729200744DDC /* ServiceManager.swift in Sources */,
+				14BBA349290676D400744DDC /* ImagePicker.swift in Sources */,
+				14BBA2F929066EED00744DDC /* KhebraTechnicianApp.swift in Sources */,
+				14BBA33B2906734900744DDC /* RegisterPasswordScreen.swift in Sources */,
+				14BBA3642906772A00744DDC /* MapViewControllerBridge.swift in Sources */,
+				14BBA38A290678F400744DDC /* TechMoreScreen.swift in Sources */,
+				14BBA3A82906835900744DDC /* CreateOrderBody.swift in Sources */,
+				14BBA37B290678E800744DDC /* InvoiceDetailScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30129066EF000744DDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BBA30A29066EF000744DDC /* KhebraTechnicianTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BBA30B29066EF000744DDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BBA31429066EF000744DDC /* KhebraTechnicianUITests.swift in Sources */,
+				14BBA31629066EF000744DDC /* KhebraTechnicianUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14BBA30729066EF000744DDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14BBA2F429066EED00744DDC /* KhebraTechnician */;
+			targetProxy = 14BBA30629066EF000744DDC /* PBXContainerItemProxy */;
+		};
+		14BBA31129066EF000744DDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14BBA2F429066EED00744DDC /* KhebraTechnician */;
+			targetProxy = 14BBA31029066EF000744DDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14BBA31729066EF000744DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14BBA31829066EF000744DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14BBA31A29066EF000744DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF57F678259BD6DAC8675C8 /* Pods-KhebraTechnician.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KhebraTechnician/Preview Content\"";
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnician;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14BBA31B29066EF000744DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D443A78490E739F6620ACC75 /* Pods-KhebraTechnician.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KhebraTechnician/Preview Content\"";
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnician;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14BBA31D29066EF000744DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C1C5550B6689FCD72A78467 /* Pods-KhebraTechnicianTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnicianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhebraTechnician.app/KhebraTechnician";
+			};
+			name = Debug;
+		};
+		14BBA31E29066EF000744DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85FB6159AC64157F0CE80F4 /* Pods-KhebraTechnicianTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnicianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhebraTechnician.app/KhebraTechnician";
+			};
+			name = Release;
+		};
+		14BBA32029066EF000744DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A83DC09333C5DF14313EAB59 /* Pods-KhebraTechnician-KhebraTechnicianUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnicianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhebraTechnician;
+			};
+			name = Debug;
+		};
+		14BBA32129066EF000744DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D40AB0EC990FA9E643FB052 /* Pods-KhebraTechnician-KhebraTechnicianUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ3C9L496T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.esols.KhebraTechnicianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhebraTechnician;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14BBA2F029066EED00744DDC /* Build configuration list for PBXProject "KhebraTechnician" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BBA31729066EF000744DDC /* Debug */,
+				14BBA31829066EF000744DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BBA31929066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnician" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BBA31A29066EF000744DDC /* Debug */,
+				14BBA31B29066EF000744DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BBA31C29066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnicianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BBA31D29066EF000744DDC /* Debug */,
+				14BBA31E29066EF000744DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BBA31F29066EF000744DDC /* Build configuration list for PBXNativeTarget "KhebraTechnicianUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BBA32029066EF000744DDC /* Debug */,
+				14BBA32129066EF000744DDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14BBA2ED29066EED00744DDC /* Project object */;
+}
