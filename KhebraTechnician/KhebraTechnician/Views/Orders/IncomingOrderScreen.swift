@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct IncomingOrderScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var serviceManager: ServiceManager
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    
+    
     var body: some View {
         ZStack{
             VStack{
@@ -46,8 +50,11 @@ struct IncomingOrderScreen: View {
                                 .padding(.top,20)
                         }
                         VStack{
-                            Image("MapSmall")
-                                .resizable()
+//                            Image("MapSmall")
+//                                .resizable()
+                            
+                            Map(coordinateRegion: $region)
+                                      //  .frame(width: 400, height: 300)
                                
                             
                         }.frame(width: UIScreen.main.bounds.width - 50, height: 180, alignment: .center)
@@ -154,6 +161,11 @@ struct IncomingOrderScreen: View {
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            .task{
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: serviceManager.selectedIncomingOrder?.location?.coordinates?[0] ?? 0.0,
+                                                                           longitude:serviceManager.selectedIncomingOrder?.location?.coordinates?[1] ?? 0.0),
+                                            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+            }
     }
 }
 

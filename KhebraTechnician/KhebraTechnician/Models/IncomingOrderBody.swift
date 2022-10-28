@@ -10,7 +10,7 @@ import Foundation
 class IncomingOrder: Codable {
     var location: Location?
     var postpone: Bool?
-    var appliedTechnician: [Customer]?
+    var appliedTechnician: [String]?
     var approve: Bool?
     var _id: String?
     var orderNumber: Int?

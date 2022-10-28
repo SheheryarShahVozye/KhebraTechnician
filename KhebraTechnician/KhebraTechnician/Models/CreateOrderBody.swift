@@ -12,7 +12,7 @@ import Foundation
 
 class CreateOrderObject: Codable {
     public var moreDetails, address, couponCode: String?
-    public var onDemant, cash: Bool?
+    public var onDemand, cash: Bool?
     public var url: String?
     public var orderTime: OrderTime?
     public var paymentMethod: PaymentMethod?
@@ -56,7 +56,7 @@ class OrderTime: Codable {
 // MARK: - PaymentMethod
 class PaymentMethod: Codable {
     public var number: Int?
-    public var expMonth, expYear: String?
+    public var exp_month, exp_year: String?
     public var cvc: Int?
 
   
