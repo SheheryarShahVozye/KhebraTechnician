@@ -13,5 +13,6 @@ class ServiceManager: ObservableObject {
     @Published var selectedServiceId: Service?
     @Published var createdOrderData: CreateOrderResponse?
     @Published var selectedLocation: String?
+    @Published var selectedIncomingOrder: IncomingOrder?
 
 }

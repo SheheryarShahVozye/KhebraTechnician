@@ -76,6 +76,7 @@
 		14BBA3A82906835900744DDC /* CreateOrderBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A42906835900744DDC /* CreateOrderBody.swift */; };
 		14BBA3AA2906852700744DDC /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3A92906852700744DDC /* OrderButton.swift */; };
 		14BBA3AC2906856100744DDC /* InvoiceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3AB2906856100744DDC /* InvoiceTextField.swift */; };
+		14C333C7290BBE5C00A496B5 /* IncomingOrderBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */; };
 		1F72C48193B71835449718AC /* Pods_KhebraTechnicianTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EA1573F6EA9E1C8BCFF602 /* Pods_KhebraTechnicianTests.framework */; };
 		9220503A846754B6FD3924E2 /* Pods_KhebraTechnician.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */; };
 		D5B151D0353A1A774B2AD2D9 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */; };
@@ -172,6 +173,7 @@
 		14BBA3A42906835900744DDC /* CreateOrderBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrderBody.swift; sourceTree = "<group>"; };
 		14BBA3A92906852700744DDC /* OrderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		14BBA3AB2906856100744DDC /* InvoiceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceTextField.swift; sourceTree = "<group>"; };
+		14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingOrderBody.swift; sourceTree = "<group>"; };
 		1C1C5550B6689FCD72A78467 /* Pods-KhebraTechnicianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnicianTests.debug.xcconfig"; path = "Target Support Files/Pods-KhebraTechnicianTests/Pods-KhebraTechnicianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician_KhebraTechnicianUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +316,7 @@
 				14BBA3A12906835900744DDC /* CustomerSignUp.swift */,
 				14BBA3A22906835900744DDC /* profileBody.swift */,
 				14BBA3A32906835900744DDC /* Services.swift */,
+				14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				14BBA3272906715900744DDC /* ViewRouter.swift in Sources */,
 				14BBA34F290676ED00744DDC /* CustomButton.swift in Sources */,
 				14BBA2FB29066EED00744DDC /* ContentView.swift in Sources */,
+				14C333C7290BBE5C00A496B5 /* IncomingOrderBody.swift in Sources */,
 				14BBA35A2906770000744DDC /* TechnicianCard.swift in Sources */,
 				14BBA3322906729200744DDC /* Strings.swift in Sources */,
 				14BBA36C290678DD00744DDC /* OrderDashboardScreen.swift in Sources */,

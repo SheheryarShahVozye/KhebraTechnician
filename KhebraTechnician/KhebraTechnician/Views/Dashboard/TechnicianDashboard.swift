@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TechnicianDashboard: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var serviceManager: ServiceManager
     @State var availableCheck: Bool = AppUtil.user?.available ?? false
+    @State var incomingOrders: [IncomingOrder] = []
     var body: some View {
         ZStack{
             VStack{
@@ -73,9 +75,12 @@ struct TechnicianDashboard: View {
                             Spacer()
                         }
                         VStack{
-                            ForEach(0 ..< 5,id:\.self) { _ in
-                                TechOrderCard()
+                            ForEach(0 ..< incomingOrders.count,id:\.self) { ind in
+                                TechOrderCard(orderNumber: String(incomingOrders[ind].orderNumber ?? 0)
+                                              ,customerName: incomingOrders[ind].customer?.name ?? "",
+                                              serviceName: incomingOrders[ind].serviceName ?? "")
                                     .onTapGesture {
+                                        serviceManager.selectedIncomingOrder = incomingOrders[ind]
                                         viewRouter.currentPage = "IncomingOrderScreen"
                                     }
                             }
@@ -101,6 +106,13 @@ struct TechnicianDashboard: View {
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            .task {
+                technicianApi.getIncomingOrders(success: { res in
+                    incomingOrders = res
+                }, failure: { _ in
+                    
+                })
+            }
     }
 }
 

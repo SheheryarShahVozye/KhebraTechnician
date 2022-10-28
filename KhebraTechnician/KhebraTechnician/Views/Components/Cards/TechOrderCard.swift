@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TechOrderCard: View {
     var orderNumber: String = "58246"
+    var customerName: String = "Mohammed Abed ElAzizi"
+    var serviceName: String = "plumbing"
     var body: some View {
         ZStack{
             
@@ -37,7 +39,7 @@ struct TechOrderCard: View {
                                 Text("Name")
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("B2C1E3"))
-                                Text("Mohammed Abed ElAzizi")
+                                Text(customerName)
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("black"))
                                 
@@ -52,7 +54,7 @@ struct TechOrderCard: View {
                             HStack{
                                 Image("service")
                                     .scaledToFit()
-                                Text("plumbing")
+                                Text(serviceName)
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("B2C1E3"))
                                 Image("distance")

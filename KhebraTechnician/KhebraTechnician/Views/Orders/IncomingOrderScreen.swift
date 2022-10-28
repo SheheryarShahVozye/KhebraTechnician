@@ -9,6 +9,7 @@ import SwiftUI
 
 struct IncomingOrderScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var serviceManager: ServiceManager
     var body: some View {
         ZStack{
             VStack{
@@ -70,7 +71,7 @@ struct IncomingOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("Mohammed Abed ElAzizi")
+                                        Text(serviceManager.selectedIncomingOrder?.customer?.name ?? "")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
@@ -95,7 +96,9 @@ struct IncomingOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("6/6/2022, 05:30 PM")
+                                        Text(AppUtil.getDateOnly(format: "", dateValue: serviceManager.selectedIncomingOrder?.scheduled?.date ?? "")
+                                             +  ", " +
+                                             (serviceManager.selectedIncomingOrder?.orderTime?.time ?? ""))
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
@@ -120,7 +123,7 @@ struct IncomingOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("As Sahafah, Olaya St. 6531, 3059 Riyadh 13321, Saudi Arabia")
+                                        Text(serviceManager.selectedIncomingOrder?.address ?? "")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
@@ -135,7 +138,11 @@ struct IncomingOrderScreen: View {
                         {
                             HStack{
                                 OrderButton(title: "Apply Now", callback: {
-                                    
+                                    technicianApi.applyForOrder(orderId: String(serviceManager.selectedIncomingOrder?._id ?? ""), success: { _ in
+                                        
+                                    }, failure: { _ in
+                                        
+                                    })
                                 })
                             }
                         }.padding(.vertical)

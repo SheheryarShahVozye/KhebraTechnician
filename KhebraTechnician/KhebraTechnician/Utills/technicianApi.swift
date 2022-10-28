@@ -102,4 +102,54 @@ class technicianApi {
         })
         
     }
+    
+    public static func getIncomingOrders(success: @escaping ([IncomingOrder]) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/order/incoming?lat=33.72148&lng=73.04329&nearMe=25000000"
+        customerApi.get(url: url,completion: { result in
+            do {
+                let jsonString = String(data: result!, encoding: .utf8)
+                print("\n\n\(jsonString ?? "-")\n\n")
+                
+                let userObj: [IncomingOrder] = try JSONDecoder()
+                    .decode([IncomingOrder].self, from: result!)
+                
+                success(userObj)
+                
+                
+            } catch {
+                print("\n\n\(error)\n at line \(#line)")
+                print("\n\nError in decoding \(error.localizedDescription)\n")
+                failure(Strings.requestApiError)
+                // failure("Error in decoding")
+            }
+        }, incomplete: { incomp  in
+            failure(incomp)
+        })
+    }
+    
+    public static func applyForOrder(orderId: String,success: @escaping ([IncomingOrder]) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/order/" + orderId + "/applynow"
+        customerApi.get(url: url,completion: { result in
+            do {
+                let jsonString = String(data: result!, encoding: .utf8)
+                print("\n\n\(jsonString ?? "-")\n\n")
+                
+                let userObj: [IncomingOrder] = try JSONDecoder()
+                    .decode([IncomingOrder].self, from: result!)
+                
+                success(userObj)
+                
+                
+            } catch {
+                print("\n\n\(error)\n at line \(#line)")
+                print("\n\nError in decoding \(error.localizedDescription)\n")
+                failure(Strings.requestApiError)
+                // failure("Error in decoding")
+            }
+        }, incomplete: { incomp  in
+            failure(incomp)
+        })
+    }
+    
+    
 }
