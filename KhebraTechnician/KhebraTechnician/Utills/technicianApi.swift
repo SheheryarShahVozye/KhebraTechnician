@@ -127,7 +127,7 @@ class technicianApi {
         })
     }
     
-    public static func getTechprofile(success: @escaping (User) -> Void, failure: @escaping (String) -> Void) {
+    public static func getTechprofile(success: @escaping (TechnicianProfile) -> Void, failure: @escaping (String) -> Void) {
         let url: String = "technician/profile"
         do{
            
@@ -137,8 +137,8 @@ class technicianApi {
                     let jsonString = String(data: result!, encoding: .utf8)
                     print("\n\n\(jsonString ?? "-")\n\n")
                     
-                    let userObj: User = try JSONDecoder()
-                        .decode(User.self, from: result!)
+                    let userObj: TechnicianProfile = try JSONDecoder()
+                        .decode(TechnicianProfile.self, from: result!)
                     
                     success(userObj)
                     

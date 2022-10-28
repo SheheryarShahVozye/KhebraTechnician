@@ -77,7 +77,7 @@ class AppUtil {
     }
     
     public static var registerResponse: RegisterResponseBody?
-    public static var user: User?
+    public static var user: TechnicianProfile?
     public static var otp: Int?
     public static var registerBody: RegisterTechnicianBody?
     public static var CurrentLocationLatitude: Double?

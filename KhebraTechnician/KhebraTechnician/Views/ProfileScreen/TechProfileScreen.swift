@@ -170,7 +170,7 @@ struct TechProfileScreen: View {
                             customerprofile.phone = mobileNo
                             
                             customerApi.updateCustomerprofle(customerprofile, success: { res in
-                                AppUtil.user = res
+                              //  AppUtil.user = res
                                 viewRouter.goBack()
                             }, failure: { _ in
                                 
@@ -188,10 +188,10 @@ struct TechProfileScreen: View {
             .onAppear(perform: {
                 technicianApi.getTechprofile(success: { res in
                     AppUtil.user = res
-                    name = AppUtil.user?.name ?? ""
-                    email = AppUtil.user?.email ?? ""
-                    mobileNo = AppUtil.user?.phone ?? ""
-                    address = AppUtil.user?.address ?? ""
+//                    name = AppUtil.user?.name ?? ""
+//                    email = AppUtil.user?.email ?? ""
+//                    mobileNo = AppUtil.user?.phone ?? ""
+//                    address = AppUtil.user?.address ?? ""
                     
                 }, failure: { _ in
                     
