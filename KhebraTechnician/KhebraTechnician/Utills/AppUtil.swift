@@ -36,6 +36,23 @@ class AppUtil {
         return hasNotch
     }
     
+    public static func getStringToDate(dateValue: String) -> Date {
+        
+        // let string = "01/02/2016"
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+     
+        let date = dateFormatter.date(from: dateValue)
+        if date != nil {
+            return date!
+        } else {
+            return Date()
+        }
+      
+        
+    }
+    
     static func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
         let isReachable = flags.contains(.reachable)
         let needConnection = flags.contains(.connectionRequired)
@@ -76,8 +93,47 @@ class AppUtil {
         return dateFormatter.string(from: value)
     }
     
+    public static func getDateInStringMonthFirst(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = CREATE_FORMAT
+        return dateFormatter.string(from: value)
+    }
+    
+   
+    
+    public static func getDateInString(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = ONLY_DATE_THREE_FORMAT
+        return dateFormatter.string(from: value)
+    }
+    
+    public static func getTimeInString(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = TIMESTAMP_FORMAT
+        return dateFormatter.string(from: value)
+    }
+    
+    public static func getCVVdate(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = TIMESTAMP_FORMAT
+        return dateFormatter.string(from: value)
+    }
+    
+    public static func getStringifyDate(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = SERVER_TIMESTAMP
+        return dateFormatter.string(from: value)
+    }
+    
+    public static func getprofileDate(_ value: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = profileFormat
+        return dateFormatter.string(from: value)
+    }
+    
     public static var registerResponse: RegisterResponseBody?
-    public static var user: TechnicianProfile?
+    public static var user: User?
+    public static var TechProfile: TechnicianProfile?
     public static var otp: Int?
     public static var registerBody: RegisterTechnicianBody?
     public static var CurrentLocationLatitude: Double?

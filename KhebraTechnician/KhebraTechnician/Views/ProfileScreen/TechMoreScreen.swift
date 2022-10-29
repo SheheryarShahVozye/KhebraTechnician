@@ -28,7 +28,7 @@ struct TechMoreScreen: View {
                         Color("137D3B") //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
                     }.frame(width: 40, height: 30)
                     Text("Available")
-                        .font(.system(size: 14))
+                        .font(.system(size: 10))
                         .fontWeight(.medium)
                         .foregroundColor(Color("137D3B"))
                         .padding(.leading)
@@ -47,13 +47,13 @@ struct TechMoreScreen: View {
                                         .foregroundColor(Color("B2C1E3"))
                                         .fontWeight(.medium)
                                     
-                                    Text("0.00")
-                                           .font(.system(size: 15))
+                                    Text(String(AppUtil.TechProfile?.balance ?? 0))
+                                           .font(.system(size: 12))
                                            .foregroundColor(Color("buttonbg"))
                                            .fontWeight(.bold)
                                 }
                             )
-                    }.frame(width: 115, height: 45, alignment: .center)
+                    }.frame(width: 90, height: 40, alignment: .center)
                         .padding(.leading,10)
                     
                     Spacer()
@@ -61,7 +61,8 @@ struct TechMoreScreen: View {
                         .scaledToFit()
                         .padding(.trailing)
                     
-                }.padding(.top,50)
+                }
+                    .padding(.top,70)
                     .padding(.horizontal)
                     .padding(.bottom,20)
                
@@ -73,7 +74,7 @@ struct TechMoreScreen: View {
                             if moreItems[item] == "Wallet" {
                                 MoreCardWallet(value: "0.00")
                             } else if  moreItems[item] == "My Point" {
-                                MoreCardWallet(name: "My Point", Imagename: "points", value: "0.00")
+                                MoreCardWallet(name: "My Point", Imagename: "points", value: String(AppUtil.TechProfile?.mypoints?.points ?? 0))
                                     .onTapGesture {
                                         viewRouter.currentPage = "MyPointScreen"
                                     }
@@ -143,6 +144,13 @@ struct TechMoreScreen: View {
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            .task {
+                technicianApi.getTechprofile(success: { res in
+                    AppUtil.TechProfile = res
+                }, failure: { _ in
+                    
+                })
+            }
     }
 }
 

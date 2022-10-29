@@ -356,7 +356,7 @@ class customerApi: NSObject, URLSessionDelegate {
     }
     
     public static func updateCustomerprofle(_ body: ProfilePostBody,success: @escaping (User) -> Void, failure: @escaping (String) -> Void) {
-        let url: String = "customer/profile/update"
+        let url: String = "technician/profile/update"
         do{
             let jsonData = try JSONEncoder().encode(body)
             let json = String(data: jsonData, encoding: String.Encoding.utf8)

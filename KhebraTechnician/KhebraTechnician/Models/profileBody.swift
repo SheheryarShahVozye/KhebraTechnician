@@ -9,7 +9,7 @@ import Foundation
 
 
 class ProfilePostBody: Codable {
-   public var name, email, phone, address: String?
+   public var name, email, phone,idNumber,commercialRegistraionNumber,url,urls: String?
 
    
 }

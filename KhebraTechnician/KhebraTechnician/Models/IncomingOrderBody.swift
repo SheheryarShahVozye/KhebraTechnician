@@ -52,6 +52,6 @@ class Customer: Codable {
 
 class LastLocation: Codable {
   //  var type: TypeEnum?
-    var coordinates: [Int]?
+    var coordinates: [Double]?
     var id: String?
 }

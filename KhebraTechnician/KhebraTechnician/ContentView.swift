@@ -79,9 +79,9 @@ struct RouteManager: View {
         } else if viewRouter.currentPage == "RatingFactorScreen" {
             RatingFactorScreen()
         }
-//        else if viewRouter.currentPage == "ChooseOnMapScreen" {
-//            ChooseOnMapScreen()
-//        }
+        else if viewRouter.currentPage == "ChangePasswordScreen" {
+            ChangePasswordScreen()
+        }
         
     }
     

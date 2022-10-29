@@ -13,6 +13,8 @@ struct TechProfileScreen: View {
     @State var email: String = ""
     @State var mobileNo: String = ""
     @State var address: String = ""
+    @State var commercialId: String = ""
+    @State var regId: String = ""
     var body: some View {
         ZStack{
             VStack{
@@ -82,7 +84,7 @@ struct TechProfileScreen: View {
                                 CustomTextField(value: $mobileNo, placeHolder: "Mobile No")
                             }.padding(.top,5)
                         }
-                       
+                        
                         
                         VStack{
                             HStack{
@@ -96,7 +98,7 @@ struct TechProfileScreen: View {
                                 Spacer()
                             }.padding(.horizontal,30)
                             
-                            CustomTextField(value: .constant(""), placeHolder: "")
+                            CustomTextField(value: $regId, placeHolder: "")
                         }.padding(.top,5)
                         
                         RoundedRectangle(cornerRadius: 0)
@@ -134,7 +136,7 @@ struct TechProfileScreen: View {
                                 Spacer()
                             }.padding(.horizontal,30)
                             
-                            CustomTextField(value: .constant(""), placeHolder: "")
+                            CustomTextField(value: $commercialId, placeHolder: "")
                         }.padding(.top,5)
                         
                         RoundedRectangle(cornerRadius: 0)
@@ -164,13 +166,15 @@ struct TechProfileScreen: View {
                         
                         OrderButton(title: "Save", callback: {
                             let customerprofile = ProfilePostBody()
-                            customerprofile.address = address
+                            //   customerprofile.address = address
                             customerprofile.name = name
                             customerprofile.email = email
                             customerprofile.phone = mobileNo
+                            customerprofile.commercialRegistraionNumber = commercialId
+                            customerprofile.idNumber = regId
                             
-                            customerApi.updateCustomerprofle(customerprofile, success: { res in
-                              //  AppUtil.user = res
+                            technicianApi.updateTechnician(customerprofile, success: { res in
+                                //  AppUtil.user = res
                                 viewRouter.goBack()
                             }, failure: { _ in
                                 
@@ -186,16 +190,12 @@ struct TechProfileScreen: View {
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
             .onAppear(perform: {
-                technicianApi.getTechprofile(success: { res in
-                    AppUtil.user = res
-//                    name = AppUtil.user?.name ?? ""
-//                    email = AppUtil.user?.email ?? ""
-//                    mobileNo = AppUtil.user?.phone ?? ""
-//                    address = AppUtil.user?.address ?? ""
-                    
-                }, failure: { _ in
-                    
-                })
+                name = AppUtil.TechProfile?.name ?? ""
+                email = AppUtil.TechProfile?.email ?? ""
+                mobileNo = AppUtil.user?.phone ?? ""
+                address = AppUtil.user?.address ?? ""
+                regId = AppUtil.TechProfile?.idNumber ?? ""
+                commercialId = AppUtil.TechProfile?.commercialRegistraionNumber ?? ""
             })
     }
 }

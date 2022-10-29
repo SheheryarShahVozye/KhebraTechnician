@@ -17,21 +17,29 @@ struct TechnicianDashboard: View {
             VStack{
                 HStack{
                    
-                    ToggleView(isOn: $availableCheck) {
-                        if availableCheck {
-                            Color("137D3B")
-                        } else {
-                            Color("B6BAC3")
-                        }
-                       //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
-                    }.frame(width: 40, height: 30)
-                        .onTapGesture {
-                          
-                        }
-                    Text("Available")
-                        .font(.system(size: 14))
+//                    ToggleView(isOn: .constant(false)) {
+//                        Color("137D3B") //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
+//                    }.frame(width: 40, height: 30)
+                    Toggle(isOn: $availableCheck) {
+                        
+                    }.labelsHidden()
+                        .onChange(of: availableCheck) { newValue in
+                            technicianApi.availableToggle(success: { res in
+                                if res.msg == "User is inactive now!" {
+                                    availableCheck = false
+                                } else {
+                                    availableCheck = true
+                                }
+                               
+                            }, failure: { _ in
+                                
+                            })
+                                    }
+
+                    Text(availableCheck ? "Available" : "In-Active")
+                        .font(.system(size: 10))
                         .fontWeight(.medium)
-                        .foregroundColor(Color("137D3B"))
+                        .foregroundColor(availableCheck ? Color("137D3B") : Color("F44336"))
                         .padding(.leading)
                     
                     
@@ -48,13 +56,13 @@ struct TechnicianDashboard: View {
                                         .foregroundColor(Color("B2C1E3"))
                                         .fontWeight(.medium)
                                     
-                                    Text("0.00")
-                                           .font(.system(size: 15))
+                                    Text(String(AppUtil.TechProfile?.balance ?? 0))
+                                           .font(.system(size: 12))
                                            .foregroundColor(Color("buttonbg"))
                                            .fontWeight(.bold)
                                 }
                             )
-                    }.frame(width: 115, height: 45, alignment: .center)
+                    }.frame(width: 90, height: 40, alignment: .center)
                         .padding(.leading,10)
                     
                     Spacer()
@@ -62,8 +70,11 @@ struct TechnicianDashboard: View {
                         .scaledToFit()
                         .padding(.trailing)
                     
-                }.padding(.top,50)
+                }
+                    .padding(.top,70)
                     .padding(.horizontal)
+                    .padding(.bottom,20)
+             
                 ScrollView{
                     VStack{
                         HStack{
@@ -186,7 +197,7 @@ struct ToggleView<Content: View>: View {
                 }
             }.background(backGround)
             .clipShape(Capsule())
-            .frame(width: 60, height: 30)//control the frame or remove it and add it to ToggleView
+            .frame(width: 50, height: 25)//control the frame or remove it and add it to ToggleView
         }
     }
 }

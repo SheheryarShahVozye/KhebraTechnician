@@ -10,7 +10,7 @@ import Foundation
 class TechnicianProfile: Codable {
     var mypoints: Mypoints?
     var location: Location?
-    var id: String?
+    var _id: String?
     var available, notificationAndOffer: Bool?
     var phone: String?
     var rating, numReviews: Int?
@@ -20,9 +20,11 @@ class TechnicianProfile: Codable {
    // var ipInfo: IPInfo?
     var lastLocation: LastLocation?
     var reviews: [String]?
-    var createdAt, updatedAt: String?
+    var createdAt, updatedAt,name, email,idNumber,commercialRegistraionNumber,url: String?
     var balance: Int?
     var urls: [String]?
+    var city: String?
+    var dob: String?
 
 }
 

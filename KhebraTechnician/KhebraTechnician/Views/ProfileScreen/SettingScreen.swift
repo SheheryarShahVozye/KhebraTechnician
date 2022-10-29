@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @State var dateOfBirth: Date = AppUtil.getStringToDate(dateValue: AppUtil.TechProfile?.dob ?? "")
+    @State var cityText: String = AppUtil.TechProfile?.city ?? ""
     var body: some View {
         ZStack{
             VStack{
@@ -33,7 +35,7 @@ struct SettingScreen: View {
                                     .shadow(radius: 1)
                                     .overlay(
                                         HStack{
-                                            DatePicker(selection: .constant(Date()),displayedComponents: .date, label: { })
+                                            DatePicker(selection: $dateOfBirth,displayedComponents: .date, label: { })
                                                 .labelsHidden()
                                             Spacer()
                                             Image("calendar_month")
@@ -62,7 +64,7 @@ struct SettingScreen: View {
                                     .shadow(radius: 1)
                                     .overlay(
                                         HStack{
-                                            Text("")
+                                            TextField("City", text: $cityText)
                                             Spacer()
                                             Image("chevron_down")
                                                 .scaledToFit()
@@ -109,6 +111,9 @@ struct SettingScreen: View {
                                     Image("chevron_down")
                                         .scaledToFit()
                                         .rotationEffect(Angle(degrees: 270))
+                                        .onTapGesture {
+                                            viewRouter.currentPage = "ChangePasswordScreen"
+                                        }
                                     
                                     
                                     
@@ -117,7 +122,15 @@ struct SettingScreen: View {
                             )
                         
                         OrderButton(title: "Save", callback: {
+                            let settingsObj = SettingsObject()
+                            settingsObj.city = cityText
+                            settingsObj.dob = AppUtil.getprofileDate(dateOfBirth)
                             
+                            technicianApi.updateSettings(settingsObj, success: { _ in
+                                
+                            }, failure: { _ in
+                                
+                            })
                         })
                     }
                     
