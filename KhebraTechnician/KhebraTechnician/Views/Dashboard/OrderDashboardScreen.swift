@@ -168,6 +168,13 @@ struct OrderDashboardScreen: View {
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            .task {
+                technicianApi.getNewOrders(success: { _ in
+                    
+                }, failure: { _ in
+                    
+                })
+            }
     }
 }
 
