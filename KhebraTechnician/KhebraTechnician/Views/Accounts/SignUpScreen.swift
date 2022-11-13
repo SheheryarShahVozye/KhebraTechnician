@@ -44,19 +44,19 @@ struct SignUpScreen: View {
                         LoginTextField(value: $textNumber)
                             .padding(.vertical,5)
                         
-                        CustomButtonSignup(title: "Sign Up as User", callback: {
-                            let object = RegisterBody()
-                            object.phone = textNumber
-                           
-                            customerApi.registerCustomer(object, success: { res in
-                                AppUtil.registerResponse = res
-                                AppUtil.otp = res.otp
-                                viewRouter.currentPage = "VerificationScreen"
-                            }, failure: { _ in
-                                
-                            })
-                            
-                        }).padding(.top)
+//                        CustomButtonSignup(title: "Sign Up as User", callback: {
+//                            let object = RegisterBody()
+//                            object.phone = textNumber
+//
+////                            customerApi.registerCustomer(object, success: { res in
+////                                AppUtil.registerResponse = res
+////                                AppUtil.otp = res.otp
+////                                viewRouter.currentPage = "VerificationScreen"
+////                            }, failure: { _ in
+////
+////                            })
+//
+//                        }).padding(.top)
                         
                         CustomButtonSignup(title: "Sign Up as Technician", callback: {
                             AppUtil.technicianNumber = textNumber

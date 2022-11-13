@@ -7,6 +7,11 @@
 
 import Foundation
 
+class IncomingOrderResponse: Codable {
+    public var order: IncomingOrder?
+    public var msg: String?
+}
+
 class IncomingOrder: Codable {
     var location: Location?
     var postpone: Bool?

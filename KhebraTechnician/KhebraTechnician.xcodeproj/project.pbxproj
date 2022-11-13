@@ -80,6 +80,8 @@
 		14C333C9290C463D00A496B5 /* TechnicianProfileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */; };
 		1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18511399290D111E00C7D011 /* SettingsBody.swift */; };
 		1851139C290D224400C7D011 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851139B290D224400C7D011 /* ChangePasswordScreen.swift */; };
+		18E587D7291FE751005F43C4 /* ApplicationCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */; };
+		18E587D929202D3B005F43C4 /* NotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587D829202D3B005F43C4 /* NotificationObject.swift */; };
 		1F72C48193B71835449718AC /* Pods_KhebraTechnicianTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EA1573F6EA9E1C8BCFF602 /* Pods_KhebraTechnicianTests.framework */; };
 		9220503A846754B6FD3924E2 /* Pods_KhebraTechnician.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */; };
 		D5B151D0353A1A774B2AD2D9 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */; };
@@ -180,6 +182,8 @@
 		14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianProfileObject.swift; sourceTree = "<group>"; };
 		18511399290D111E00C7D011 /* SettingsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBody.swift; sourceTree = "<group>"; };
 		1851139B290D224400C7D011 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
+		18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCompleteScreen.swift; sourceTree = "<group>"; };
+		18E587D829202D3B005F43C4 /* NotificationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObject.swift; sourceTree = "<group>"; };
 		1C1C5550B6689FCD72A78467 /* Pods-KhebraTechnicianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhebraTechnicianTests.debug.xcconfig"; path = "Target Support Files/Pods-KhebraTechnicianTests/Pods-KhebraTechnicianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3ACAD285A6031DA01B151F2D /* Pods_KhebraTechnician.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC8ECDE55651D62E4084965 /* Pods_KhebraTechnician_KhebraTechnicianUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhebraTechnician_KhebraTechnicianUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +329,7 @@
 				14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */,
 				14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */,
 				18511399290D111E00C7D011 /* SettingsBody.swift */,
+				18E587D829202D3B005F43C4 /* NotificationObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				14BBA36F290678E800744DDC /* NewInvoiceScreen.swift */,
 				14BBA375290678E800744DDC /* NewOrderDetailScreen.swift */,
 				14BBA370290678E800744DDC /* OrderLocation.swift */,
+				18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -810,12 +816,14 @@
 				14BBA39E29067D2700744DDC /* AgreementCard.swift in Sources */,
 				14BBA3A02906826E00744DDC /* BottomNavTechnician.swift in Sources */,
 				14BBA379290678E800744DDC /* DeferredOrderScreen.swift in Sources */,
+				18E587D929202D3B005F43C4 /* NotificationObject.swift in Sources */,
 				14BBA3632906772A00744DDC /* MapView.swift in Sources */,
 				14BBA388290678F400744DDC /* SettingScreen.swift in Sources */,
 				1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */,
 				14BBA376290678E800744DDC /* NewInvoiceScreen.swift in Sources */,
 				14BBA387290678F400744DDC /* TechProfileScreen.swift in Sources */,
 				14BBA33F2906734900744DDC /* SignUpScreen.swift in Sources */,
+				18E587D7291FE751005F43C4 /* ApplicationCompleteScreen.swift in Sources */,
 				14BBA3332906729200744DDC /* AppUtil.swift in Sources */,
 				14BBA378290678E800744DDC /* CompletedOrderScreen.swift in Sources */,
 				14BBA3312906729200744DDC /* ServiceManager.swift in Sources */,

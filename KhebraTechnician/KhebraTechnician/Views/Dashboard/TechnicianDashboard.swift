@@ -69,6 +69,9 @@ struct TechnicianDashboard: View {
                     Image("darkBell")
                         .scaledToFit()
                         .padding(.trailing)
+                        .onTapGesture {
+                            viewRouter.currentPage = "NotificationScreen"
+                        }
                     
                 }
                     .padding(.top,70)

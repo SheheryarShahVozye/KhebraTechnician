@@ -81,6 +81,8 @@ struct RouteManager: View {
         }
         else if viewRouter.currentPage == "ChangePasswordScreen" {
             ChangePasswordScreen()
+        } else if viewRouter.currentPage == "ApplicationCompleteScreen" {
+            ApplicationCompleteScreen()
         }
         
     }

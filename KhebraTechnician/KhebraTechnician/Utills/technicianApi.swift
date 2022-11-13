@@ -283,15 +283,39 @@ class technicianApi {
     }
     
     
-    public static func applyForOrder(orderId: String,success: @escaping ([IncomingOrder]) -> Void, failure: @escaping (String) -> Void) {
+    public static func applyForOrder(orderId: String,success: @escaping (IncomingOrderResponse) -> Void, failure: @escaping (String) -> Void) {
         let url: String = "technician/order/" + orderId + "/applynow"
         customerApi.get(url: url,completion: { result in
             do {
                 let jsonString = String(data: result!, encoding: .utf8)
                 print("\n\n\(jsonString ?? "-")\n\n")
                 
-                let userObj: [IncomingOrder] = try JSONDecoder()
-                    .decode([IncomingOrder].self, from: result!)
+                let userObj: IncomingOrderResponse = try JSONDecoder()
+                    .decode(IncomingOrderResponse.self, from: result!)
+                
+                success(userObj)
+                
+                
+            } catch {
+                print("\n\n\(error)\n at line \(#line)")
+                print("\n\nError in decoding \(error.localizedDescription)\n")
+                failure(Strings.requestApiError)
+                // failure("Error in decoding")
+            }
+        }, incomplete: { incomp  in
+            failure(incomp)
+        })
+    }
+    
+    public static func getNotifications(orderId: String,success: @escaping ([NotificationObjectElement]) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/notification"
+        customerApi.get(url: url,completion: { result in
+            do {
+                let jsonString = String(data: result!, encoding: .utf8)
+                print("\n\n\(jsonString ?? "-")\n\n")
+                
+                let userObj: [NotificationObjectElement] = try JSONDecoder()
+                    .decode([NotificationObjectElement].self, from: result!)
                 
                 success(userObj)
                 

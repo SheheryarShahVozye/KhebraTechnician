@@ -11,6 +11,7 @@ import MapKit
 struct IncomingOrderScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var serviceManager: ServiceManager
+    @State var showPreloader: Bool = false
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     
@@ -145,10 +146,13 @@ struct IncomingOrderScreen: View {
                         {
                             HStack{
                                 OrderButton(title: "Apply Now", callback: {
+                                    showPreloader = true
                                     technicianApi.applyForOrder(orderId: String(serviceManager.selectedIncomingOrder?._id ?? ""), success: { _ in
+                                        showPreloader = false
+                                        viewRouter.currentPage = "ApplicationCompleteScreen"
                                         
                                     }, failure: { _ in
-                                        
+                                        showPreloader = false
                                     })
                                 })
                             }
@@ -156,6 +160,18 @@ struct IncomingOrderScreen: View {
                     }
                 }
                 BottomNavTechnician()
+            }
+            
+            if showPreloader {
+                VStack {}
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("B6BAC3"))
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("buttonbg")))
+                    .scaleEffect(x: 4, y: 4, anchor: .center)
             }
           
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
