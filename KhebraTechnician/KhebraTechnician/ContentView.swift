@@ -12,10 +12,21 @@ struct ContentView: View {
     var body: some View {
         
         if viewRouter.currentPage == "splashscreen" {
+            
             SplashScreen()
                 .onAppear(perform: {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        viewRouter.currentPage = "LoginScreen"
+                        if let token = UserDefaults.standard.value(forKey: Keys.token) as? String {
+                            if token != "" {
+                                AppUtil.idToken = token
+                                viewRouter.currentPage = "TechnicianDashboard"
+                            } else {
+                                viewRouter.currentPage = "LoginScreen"
+                            }
+                        } else {
+                            viewRouter.currentPage = "LoginScreen"
+                        }
+                        
                     }
                 })
         } else {
@@ -87,5 +98,14 @@ struct RouteManager: View {
         
     }
     
+    
+}
+
+
+struct Keys {
+    static let selectedLongitude = "selectedLanguage"
+    static let selectedLat = "selectedLat"
+    static let token = "token"
+    static let userID = "userID"
     
 }

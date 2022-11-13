@@ -103,7 +103,7 @@ class technicianApi {
         
     }
     
-    public static func getNewOrders(success: @escaping (msgResponse) -> Void, failure: @escaping (String) -> Void) {
+    public static func getNewOrders(success: @escaping ([AssignedOrderObjectElement]) -> Void, failure: @escaping (String) -> Void) {
        
         let url: String = "technician/order/new"
         customerApi.get(url: url,completion: { result in
@@ -111,8 +111,8 @@ class technicianApi {
                 let jsonString = String(data: result!, encoding: .utf8)
                 print("\n\n\(jsonString ?? "-")\n\n")
                 
-                let userObj: msgResponse = try JSONDecoder()
-                    .decode(msgResponse.self, from: result!)
+                let userObj: [AssignedOrderObjectElement] = try JSONDecoder()
+                    .decode([AssignedOrderObjectElement].self, from: result!)
                 
                 success(userObj)
                 

@@ -10,12 +10,14 @@ import SwiftUI
 struct OrderDashboardScreen: View {
     @State var selected: String = "New Order"
     @State var textcolorNon: String = "B2C1E3"
+    @State var newOrders: [AssignedOrderObjectElement] = []
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var serviceManager: ServiceManager
     var body: some View {
         ZStack{
             VStack{
                 HStack{
-                   
+                    
                     ToggleView(isOn: .constant(false)) {
                         Color("137D3B") //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
                     }.frame(width: 40, height: 30)
@@ -34,15 +36,15 @@ struct OrderDashboardScreen: View {
                             .stroke(Color("B2C1E3"),lineWidth: 1)
                             .overlay(
                                 HStack{
-                                 Text("Balance")
+                                    Text("Balance")
                                         .font(.system(size: 15))
                                         .foregroundColor(Color("B2C1E3"))
                                         .fontWeight(.medium)
                                     
                                     Text("0.00")
-                                           .font(.system(size: 15))
-                                           .foregroundColor(Color("buttonbg"))
-                                           .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color("buttonbg"))
+                                        .fontWeight(.bold)
                                 }
                             )
                     }.frame(width: 115, height: 45, alignment: .center)
@@ -141,36 +143,41 @@ struct OrderDashboardScreen: View {
                             }.padding(.horizontal)
                         ).padding(.vertical,10)
                     ScrollView{
-                        ForEach(0 ..< 6,id:\.self) { _ in
-                            if selected == "New Order" {
-                                TechOrderDetailCard()
+                        
+                        if selected == "New Order" {
+                            ForEach(0 ..< newOrders.count,id:\.self) { item in
+                                TechOrderDetailCard(orderNumber: String(newOrders[item].orderNumber ?? 0),
+                                                    name: newOrders[item].customer?.name ?? "",
+                                                    serviceName: newOrders[item].serviceName ?? "")
                                     .onTapGesture{
-                                       viewRouter.currentPage = "NewOrderDetailScreen"
-                                    }
-                            } else if selected == "Deferred" {
-                                TechOrderDetailCard()
-                                    .onTapGesture{
-                                        viewRouter.currentPage = "DeferredOrderScreen"
-                                    }
-                            } else {
-                                TechOrderCompletedCard()
-                                    .onTapGesture{
-                                     viewRouter.currentPage = "CompletedOrderScreen"
+                                        serviceManager.selectedNewOrder = newOrders[item]
+                                        viewRouter.currentPage = "NewOrderDetailScreen"
                                     }
                             }
-                           
+                        } else if selected == "Deferred" {
+                            TechOrderDetailCard()
+                                .onTapGesture{
+                                    viewRouter.currentPage = "DeferredOrderScreen"
+                                }
+                        } else {
+                            TechOrderCompletedCard()
+                                .onTapGesture{
+                                    viewRouter.currentPage = "CompletedOrderScreen"
+                                }
                         }
+                        
+                        
                     }.padding(.top)
                     BottomNavTechnician()
                 }
-               
+                
             }
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
             .task {
-                technicianApi.getNewOrders(success: { _ in
-                    
+                technicianApi.getNewOrders(success: { res in
+                    newOrders = res
                 }, failure: { _ in
                     
                 })

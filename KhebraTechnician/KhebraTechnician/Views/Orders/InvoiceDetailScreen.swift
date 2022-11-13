@@ -200,7 +200,8 @@ struct InvoiceDetailScreen: View {
                 BottomNavTechnician()
             }
           
-        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
     }

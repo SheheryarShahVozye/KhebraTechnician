@@ -8,7 +8,7 @@
 import Foundation
 
 class NotificationObjectElement: Codable {
-    var id, title, descripton, user: String?
+    var id, title, descripton,orderId, user: String?
     var v: Int?
 
   
