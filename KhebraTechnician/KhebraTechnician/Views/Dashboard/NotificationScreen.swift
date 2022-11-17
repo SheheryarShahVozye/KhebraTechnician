@@ -10,6 +10,7 @@ import SwiftUI
 struct NotificationScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @State var notifications: [NotificationObjectElement] = []
+    @EnvironmentObject var serviceManager: ServiceManager
     var body: some View {
         ZStack{
             VStack{
@@ -17,6 +18,10 @@ struct NotificationScreen: View {
                 ScrollView{
                     ForEach(0 ..< notifications.count,id:\.self) { ind in
                         NotificationCard(text: notifications[ind].descripton ?? "")
+                            .onTapGesture {
+                                serviceManager.notificationOrder = notifications[ind].orderId
+                                viewRouter.currentPage = "OrderConfirmationScreen"
+                            }
                     }
                     
                 }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TechProfileScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var name: String = ""
-    @State var email: String = ""
-    @State var mobileNo: String = ""
-    @State var address: String = ""
-    @State var commercialId: String = ""
+    @State var name: String = AppUtil.TechProfile?.name ?? ""
+    @State var email: String = AppUtil.TechProfile?.email ?? ""
+    @State var mobileNo: String = AppUtil.TechProfile?.phone ?? ""
+    @State var address: String = AppUtil.TechProfile?.city ?? ""
+    @State var commercialId: String = AppUtil.TechProfile?.commercialRegistraionNumber ?? ""
     @State var regId: String = ""
     var body: some View {
         ZStack{

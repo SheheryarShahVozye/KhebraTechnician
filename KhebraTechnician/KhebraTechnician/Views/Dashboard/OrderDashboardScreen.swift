@@ -181,6 +181,18 @@ struct OrderDashboardScreen: View {
                 }, failure: { _ in
                     
                 })
+                
+                technicianApi.getDeferedOrders(success: { res in
+                    newOrders = res
+                }, failure: { _ in
+                    
+                })
+                
+                technicianApi.getCompletedOrders(success: { res in
+                    newOrders = res
+                }, failure: { _ in
+                    
+                })
             }
     }
 }

@@ -27,7 +27,31 @@ class IncomingOrder: Codable {
     var cash, assigned, isPaid: Bool?
     var address, service, serviceName: String?
     var totalPrice: Int?
-    var couponCode: String?
+    var couponCode,assignedTo: String?
+    var reviewed: Bool?
+    var createdAt, updatedAt: String?
+    var v: Int?
+    var paymentMethod: PaymentMethod?
+    var scheduled: OrderTime?
+    var createdAtTime: String?
+}
+
+class IncomingOrder2: Codable {
+    var location: Location?
+    var postpone: Bool?
+    var appliedTechnician: [String]?
+    var approve: Bool?
+    var _id: String?
+    var orderNumber: Int?
+    var customer: String?
+    var orderTime: OrderTime?
+    var onDemant: Bool?
+    var status, moreDetails: String?
+    var url: String?
+    var cash, assigned, isPaid: Bool?
+    var address, service, serviceName: String?
+    var totalPrice: Int?
+    var couponCode,assignedTo: String?
     var reviewed: Bool?
     var createdAt, updatedAt: String?
     var v: Int?

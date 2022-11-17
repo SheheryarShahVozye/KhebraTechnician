@@ -16,3 +16,7 @@ public class changePasswordObject: Codable {
     public var oldPassword: String?
     public var password: String?
 }
+
+public class msgBody: Codable {
+    public var msg: String?
+}

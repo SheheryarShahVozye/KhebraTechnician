@@ -15,5 +15,6 @@ class ServiceManager: ObservableObject {
     @Published var selectedLocation: String?
     @Published var selectedIncomingOrder: IncomingOrder?
     @Published var selectedNewOrder: AssignedOrderObjectElement?
-
+    @Published var notificationOrder: IncomingOrder?
+    
 }

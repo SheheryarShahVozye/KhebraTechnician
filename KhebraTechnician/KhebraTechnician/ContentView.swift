@@ -89,11 +89,12 @@ struct RouteManager: View {
             NewInvoiceScreen()
         } else if viewRouter.currentPage == "RatingFactorScreen" {
             RatingFactorScreen()
-        }
-        else if viewRouter.currentPage == "ChangePasswordScreen" {
+        } else if viewRouter.currentPage == "ChangePasswordScreen" {
             ChangePasswordScreen()
         } else if viewRouter.currentPage == "ApplicationCompleteScreen" {
             ApplicationCompleteScreen()
+        } else if viewRouter.currentPage == "OrderConfirmationScreen" {
+            OrderConfirmationScreen()
         }
         
     }
