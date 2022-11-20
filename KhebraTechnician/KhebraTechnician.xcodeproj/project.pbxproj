@@ -78,6 +78,7 @@
 		14BBA3AC2906856100744DDC /* InvoiceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBA3AB2906856100744DDC /* InvoiceTextField.swift */; };
 		14C333C7290BBE5C00A496B5 /* IncomingOrderBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */; };
 		14C333C9290C463D00A496B5 /* TechnicianProfileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */; };
+		183598AF292A270100DA2B70 /* InvoiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183598AE292A270100DA2B70 /* InvoiceClass.swift */; };
 		1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18511399290D111E00C7D011 /* SettingsBody.swift */; };
 		1851139C290D224400C7D011 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851139B290D224400C7D011 /* ChangePasswordScreen.swift */; };
 		18E587D7291FE751005F43C4 /* ApplicationCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */; };
@@ -182,6 +183,7 @@
 		14BBA3AB2906856100744DDC /* InvoiceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceTextField.swift; sourceTree = "<group>"; };
 		14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingOrderBody.swift; sourceTree = "<group>"; };
 		14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianProfileObject.swift; sourceTree = "<group>"; };
+		183598AE292A270100DA2B70 /* InvoiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceClass.swift; sourceTree = "<group>"; };
 		18511399290D111E00C7D011 /* SettingsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBody.swift; sourceTree = "<group>"; };
 		1851139B290D224400C7D011 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCompleteScreen.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				18511399290D111E00C7D011 /* SettingsBody.swift */,
 				18E587D829202D3B005F43C4 /* NotificationObject.swift */,
 				18E587DE29214D46005F43C4 /* AssignedOrdersClass.swift */,
+				183598AE292A270100DA2B70 /* InvoiceClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				14BBA36C290678DD00744DDC /* OrderDashboardScreen.swift in Sources */,
 				14BBA3A72906835900744DDC /* Services.swift in Sources */,
 				14BBA3AC2906856100744DDC /* InvoiceTextField.swift in Sources */,
+				183598AF292A270100DA2B70 /* InvoiceClass.swift in Sources */,
 				18E587DD2920EFA4005F43C4 /* OrderConfirmationScreen.swift in Sources */,
 				14BBA32F2906729200744DDC /* LocationService.swift in Sources */,
 				14BBA35F2906770000744DDC /* MyOrderCard.swift in Sources */,

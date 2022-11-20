@@ -181,6 +181,42 @@ class technicianApi {
         
     }
     
+    public static func generateInvoice(orderId: String, body: InvoiceObject,success: @escaping (InvoiceObject) -> Void, failure: @escaping (String) -> Void) {
+       
+        let url: String = "technician/order/invoice/" + orderId
+        do{
+            let jsonData = try JSONEncoder().encode(body)
+            let json = String(data: jsonData, encoding: String.Encoding.utf8)
+            print("\n\n\(json ?? "-")\n\n")
+            
+            customerApi.put(url: url,data:jsonData, completion: { result in
+                do {
+                    let jsonString = String(data: result!, encoding: .utf8)
+                    print("\n\n\(jsonString ?? "-")\n\n")
+                    
+                    let userObj: InvoiceObject = try JSONDecoder()
+                        .decode(InvoiceObject.self, from: result!)
+                    
+                    success(userObj)
+                    
+                } catch {
+                    print("\n\n\(error)\n at line \(#line)")
+                    print("\n\nError in decoding \(error.localizedDescription)\n")
+                    failure(Strings.requestApiError)
+                    // failure("Error in decoding")
+                }
+            }, incomplete: { incomp  in
+                failure(incomp)
+            })
+        }  catch {
+            print("\n\n\(error)\n at line \(#line)")
+            print("\n\nError in encoding \(error.localizedDescription)\n")
+            failure(Strings.requestApiError)
+            // failure("Error in encoding")
+        }
+        
+    }
+    
     public static func getCompletedOrders(success: @escaping ([AssignedOrderObjectElement]) -> Void, failure: @escaping (String) -> Void) {
        
         let url: String = "technician/order/completed"

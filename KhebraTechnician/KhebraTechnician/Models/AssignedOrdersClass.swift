@@ -10,7 +10,7 @@ import Foundation
 class AssignedOrderObjectElement: Codable {
     var scheduled: OrderTime?
     var location: Location?
-    var id: String?
+    var _id: String?
     var postpone: Bool?
     var appliedTechnician: [String]?
     var orderNumber: Int?
@@ -21,6 +21,6 @@ class AssignedOrderObjectElement: Codable {
     var address, service, serviceName: String?
     var totalPrice: Int?
     var couponCode, createdAt, updatedAt: String?
-    var v: Int?
+    var __v: Int?
     var assignedTo: TechnicianProfile?
 }

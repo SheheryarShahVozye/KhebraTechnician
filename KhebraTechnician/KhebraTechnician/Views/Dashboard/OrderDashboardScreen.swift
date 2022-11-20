@@ -11,6 +11,8 @@ struct OrderDashboardScreen: View {
     @State var selected: String = "New Order"
     @State var textcolorNon: String = "B2C1E3"
     @State var newOrders: [AssignedOrderObjectElement] = []
+    @State var defferedOrders: [AssignedOrderObjectElement] = []
+    @State var completedOrders: [AssignedOrderObjectElement] = []
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var serviceManager: ServiceManager
     var body: some View {
@@ -155,15 +157,25 @@ struct OrderDashboardScreen: View {
                                     }
                             }
                         } else if selected == "Deferred" {
-                            TechOrderDetailCard()
-                                .onTapGesture{
-                                    viewRouter.currentPage = "DeferredOrderScreen"
-                                }
+                            ForEach(0 ..< defferedOrders.count,id:\.self) { item in
+                                TechOrderDetailCard(orderNumber: String(defferedOrders[item].orderNumber ?? 0),
+                                                    name: defferedOrders[item].customer?.name ?? "",
+                                                    serviceName: defferedOrders[item].serviceName ?? "")
+                                    .onTapGesture{
+                                        serviceManager.selectedNewOrder = defferedOrders[item]
+                                        viewRouter.currentPage = "NewOrderDetailScreen"
+                                    }
+                            }
                         } else {
-                            TechOrderCompletedCard()
-                                .onTapGesture{
-                                    viewRouter.currentPage = "CompletedOrderScreen"
-                                }
+                            ForEach(0 ..< completedOrders.count,id:\.self) { item in
+                                TechOrderDetailCard(orderNumber: String(completedOrders[item].orderNumber ?? 0),
+                                                    name: completedOrders[item].customer?.name ?? "",
+                                                    serviceName: completedOrders[item].serviceName ?? "")
+                                    .onTapGesture{
+                                        serviceManager.selectedNewOrder = completedOrders[item]
+                                        viewRouter.currentPage = "NewOrderDetailScreen"
+                                    }
+                            }
                         }
                         
                         
@@ -183,13 +195,13 @@ struct OrderDashboardScreen: View {
                 })
                 
                 technicianApi.getDeferedOrders(success: { res in
-                    newOrders = res
+                    defferedOrders = res
                 }, failure: { _ in
                     
                 })
                 
                 technicianApi.getCompletedOrders(success: { res in
-                    newOrders = res
+                    completedOrders = res
                 }, failure: { _ in
                     
                 })
