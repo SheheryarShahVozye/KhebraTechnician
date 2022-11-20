@@ -11,6 +11,7 @@ struct NewOrderDetailScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var serviceManager: ServiceManager
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    @State var showPreloader: Bool = false
     @State var isssueInvoice: Bool = false
     @State var workfee: String = ""
     @State var costofSpare: String = ""
@@ -244,6 +245,7 @@ struct NewOrderDetailScreen: View {
                                 VStack
                                 {
                                     CustomButton(title: "Send to Customer", callback: {
+                                        showPreloader = true
                                         let invoiceobj = InvoiceObject()
                                         invoiceobj.workFee = Int(workfee)
                                         invoiceobj.sparePartDelivery = Int(sparePartDelivery)
@@ -253,9 +255,10 @@ struct NewOrderDetailScreen: View {
                                         invoiceobj.url = ""
                                         
                                         technicianApi.generateInvoice(orderId: serviceManager.selectedNewOrder?._id ?? "" , body: invoiceobj, success: { _ in
-                                            
+                                            showPreloader = false
+                                            viewRouter.goBack()
                                         }, failure:  { _ in
-                                            
+                                            showPreloader = false
                                         })
                                     })
                                 }.padding(.vertical,20)
@@ -281,6 +284,17 @@ struct NewOrderDetailScreen: View {
                        
                     }
                 }
+            }
+            if showPreloader {
+                VStack {}
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("B6BAC3"))
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("buttonbg")))
+                    .scaleEffect(x: 4, y: 4, anchor: .center)
             }
           
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
