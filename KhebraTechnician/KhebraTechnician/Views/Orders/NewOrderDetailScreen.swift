@@ -266,6 +266,38 @@ struct NewOrderDetailScreen: View {
                             .padding(.top)
                            
                         }
+                        
+                        
+                        if serviceManager.selectedNewOrder?.technicianStatus?.order == "received" {
+                            VStack{
+                                NewOrderButton(title: "On the Way")
+                                    .onTapGesture{
+                                        showPreloader = true
+                                        technicianApi.updateTechStatusToWay(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
+                                            showPreloader = false
+                                        }, failure: { _ in
+                                            showPreloader = false
+                                        })
+                                    }
+                            }
+                        }
+                        
+                        if serviceManager.selectedNewOrder?.technicianStatus?.order == "way" {
+                            VStack{
+                                NewOrderButton(title: "Arrived")
+                                    .onTapGesture{
+                                        showPreloader = true
+                                        technicianApi.updateTechStatusToArrive(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
+                                            showPreloader = false
+                                        }, failure: { _ in
+                                            showPreloader = false
+                                        })
+                                    }
+                            }
+                        }
+                        
+                        
+                        
                        
                         if !isssueInvoice {
                             VStack

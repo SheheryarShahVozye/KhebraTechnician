@@ -23,4 +23,10 @@ class AssignedOrderObjectElement: Codable {
     var couponCode, createdAt, updatedAt: String?
     var __v: Int?
     var assignedTo: TechnicianProfile?
+    var technicianStatus: TechnicianStatus?
+}
+
+class updatedStatusResponse: Codable {
+    var order: AssignedOrderObjectElement?
+    var msg: String?
 }
