@@ -24,12 +24,12 @@ struct TechnicianDashboard: View {
                         
                     }.labelsHidden()
                         .onChange(of: availableCheck) { newValue in
-                            technicianApi.availableToggle(success: { res in
-                                if res.msg == "User is inactive now!" {
-                                    availableCheck = false
-                                } else {
-                                    availableCheck = true
-                                }
+                            technicianApi.availableToggle(status: availableCheck,success: { res in
+//                                if res.msg == "User is inactive now!" {
+//                                    availableCheck = false
+//                                } else {
+//                                    availableCheck = true
+//                                }
                                
                             }, failure: { _ in
                                 
@@ -163,35 +163,27 @@ struct ToggleView<Content: View>: View {
                 .frame(width: reader.frame(in: .global).height)
                 .onTapGesture {
                     withAnimation {
-                        technicianApi.availableToggle(success: { res in
-                            if res.msg == "User is inactive now!" {
-                                isOn = false
-                            } else {
-                                isOn = true
-                            }
-                           
-                        }, failure: { _ in
-                            
-                        })
+//                        technicianApi.availableToggle(success: { res in
+//                            if res.msg == "User is inactive now!" {
+//                                isOn = false
+//                            } else {
+//                                isOn = true
+//                            }
+//
+//                        }, failure: { _ in
+//
+//                        })
                        
                     }
                 }.modifier(Swipe { direction in
                     if direction == .swipeLeft {
                         withAnimation() {
-                            technicianApi.availableToggle(success: { _ in
-                                isOn = true
-                            }, failure: { _ in
-                                
-                            })
+                           
                            
                         }
                     }else if direction == .swipeRight {
                         withAnimation() {
-                            technicianApi.availableToggle(success: { _ in
-                                isOn = false
-                            }, failure: { _ in
-                                
-                            })
+                           
                         }
                     }
                 })

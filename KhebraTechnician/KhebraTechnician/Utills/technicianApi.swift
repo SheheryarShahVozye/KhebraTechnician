@@ -8,6 +8,7 @@
 import Foundation
 
 
+
 class technicianApi {
     
     public static func registerTechnician(_ body: RegisterTechnicianBody,success: @escaping (User) -> Void, failure: @escaping (String) -> Void) {
@@ -78,8 +79,8 @@ class technicianApi {
         }
     }
     
-    public static func availableToggle(success: @escaping (msgResponse) -> Void, failure: @escaping (String) -> Void) {
-        let url: String = "technician/available"
+    public static func availableToggle(status: Bool,success: @escaping (msgResponse) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/available?active=" + String(status)
         customerApi.get(url: url,completion: { result in
             do {
                 let jsonString = String(data: result!, encoding: .utf8)
