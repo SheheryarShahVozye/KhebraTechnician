@@ -107,6 +107,25 @@ class AppUtil {
         
     }
     
+    public static func getDateAndtime(dateValue: String) -> String {
+        
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM d, h:mm a"
+        
+        if let date = dateFormatterGet.date(from: dateValue) {
+            print(dateFormatterPrint.string(from: date))
+            return dateFormatterPrint.string(from: date)
+        } else {
+            print("There was an error decoding the string")
+            return ""
+        }
+        
+    }
+    
     public static func getAmPmTime(_ value: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = AM_PM_TIMESTAMP

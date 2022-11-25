@@ -107,7 +107,12 @@ struct TechMoreScreen: View {
                                         }
                                         
                                         if  moreItems[item] == "Logout" {
+                                            let defaults = UserDefaults.standard
+                                            defaults.set("", forKey: Keys.token)
+                                           // defaults.set("", forKey: Keys.userID)
+                                            UserDefaults.standard.removeObject(forKey: Keys.token)
                                             viewRouter.currentPage = "LoginScreen"
+                                            
                                         }
                                         
                                         if  moreItems[item] == "Notification" {

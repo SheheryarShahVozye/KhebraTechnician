@@ -17,19 +17,13 @@ struct TechnicianDashboard: View {
             VStack{
                 HStack{
                    
-//                    ToggleView(isOn: .constant(false)) {
-//                        Color("137D3B") //you can put anything Image, Color, View.... & you can use different images depending on the toggle state using an if statement
-//                    }.frame(width: 40, height: 30)
+
                     Toggle(isOn: $availableCheck) {
                         
                     }.labelsHidden()
                         .onChange(of: availableCheck) { newValue in
                             technicianApi.availableToggle(status: availableCheck,success: { res in
-//                                if res.msg == "User is inactive now!" {
-//                                    availableCheck = false
-//                                } else {
-//                                    availableCheck = true
-//                                }
+
                                
                             }, failure: { _ in
                                 

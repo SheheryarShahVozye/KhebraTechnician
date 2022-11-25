@@ -17,7 +17,7 @@ struct NotificationScreen: View {
                 TopNavigation(titleText: "Notifications")
                 ScrollView{
                     ForEach(0 ..< notifications.count,id:\.self) { ind in
-                        NotificationCard(text: notifications[ind].descripton ?? "")
+                        NotificationCard(text: notifications[ind].descripton ?? "",timeStamp: AppUtil.getDateAndtime( dateValue: notifications[ind].createdAt ?? ""))
                             .onTapGesture {
                                 serviceManager.notificationOrder = notifications[ind].orderId
                                 viewRouter.currentPage = "OrderConfirmationScreen"

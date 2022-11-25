@@ -90,6 +90,9 @@ struct SignUpScreen: View {
                             .fontWeight(.regular)
                             .font(.system(size: 12))
                             .foregroundColor(Color("fontBlue"))
+                            .onTapGesture {
+                                viewRouter.currentPage = "LoginScreen"
+                            }
                     }.padding(.vertical,30)
                     
                 }.padding(.horizontal,30)

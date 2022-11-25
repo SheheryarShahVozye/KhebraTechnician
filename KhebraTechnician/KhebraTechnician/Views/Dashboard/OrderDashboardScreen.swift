@@ -19,6 +19,7 @@ struct OrderDashboardScreen: View {
     var body: some View {
         ZStack{
             VStack{
+                /*
                 HStack{
                     
                     ToggleView(isOn: .constant(false)) {
@@ -60,6 +61,56 @@ struct OrderDashboardScreen: View {
                     
                 }.padding(.top,70)
                     .padding(.horizontal)
+                */
+                HStack{
+                   
+
+                    Toggle(isOn: .constant(AppUtil.user?.available ?? false)) {
+                        
+                    }.labelsHidden()
+                    
+
+                    Text(AppUtil.user?.available ?? false ? "Available" : "In-Active")
+                        .font(.system(size: 10))
+                        .fontWeight(.medium)
+                        .foregroundColor(AppUtil.user?.available ?? false ? Color("137D3B") : Color("F44336"))
+                        .padding(.leading)
+                    
+                    
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 1)
+                            .foregroundColor(Color("White"))
+                        RoundedRectangle(cornerRadius: 1)
+                            .stroke(Color("B2C1E3"),lineWidth: 1)
+                            .overlay(
+                                HStack{
+                                 Text("Balance")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color("B2C1E3"))
+                                        .fontWeight(.medium)
+                                    
+                                    Text(String(AppUtil.TechProfile?.balance ?? 0))
+                                           .font(.system(size: 12))
+                                           .foregroundColor(Color("buttonbg"))
+                                           .fontWeight(.bold)
+                                }
+                            )
+                    }.frame(width: 90, height: 40, alignment: .center)
+                        .padding(.leading,10)
+                    
+                    Spacer()
+                    Image("darkBell")
+                        .scaledToFit()
+                        .padding(.trailing)
+                        .onTapGesture {
+                            viewRouter.currentPage = "NotificationScreen"
+                        }
+                    
+                }
+                    .padding(.top,70)
+                    .padding(.horizontal)
+                    .padding(.bottom,20)
                 VStack{
                     RoundedRectangle(cornerRadius: 7)
                         .foregroundColor(Color("White"))

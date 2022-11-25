@@ -66,6 +66,8 @@ class customerApi: NSObject, URLSessionDelegate {
                     return incomplete(Strings.unAuthorizedUserError)
                 } else if httpResponse?.statusCode == 403 {
                     return incomplete(Strings.accountInActiveError)
+                } else if httpResponse?.statusCode == 400 {
+                    return incomplete(Strings.unAuthorizedUserError)
                 }
                 return completion(responseData!)
             }
