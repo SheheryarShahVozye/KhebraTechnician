@@ -69,7 +69,15 @@ struct RegisterPasswordScreen: View {
                             
                             technicianApi.registerTechnician(registerBody, success: { res in
                                 showPreloader = false
-                                AppUtil.user = res
+                                AppUtil.user = res.newUser
+                                AppUtil.idToken = res.token ?? ""
+                                let defaults = UserDefaults.standard
+                                defaults.set(AppUtil.idToken, forKey: Keys.token)
+
+                                
+                                if let token = defaults.value(forKey: Keys.token) as? String {
+                                    print("defaults Token: \(token)")
+                                }
                                 viewRouter.currentPage =  "TechnicianDashboard"
                                
                             }, failure: { f in

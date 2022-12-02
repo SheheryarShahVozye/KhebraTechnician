@@ -11,7 +11,7 @@ import Foundation
 
 class technicianApi {
     
-    public static func registerTechnician(_ body: RegisterTechnicianBody,success: @escaping (User) -> Void, failure: @escaping (String) -> Void) {
+    public static func registerTechnician(_ body: RegisterTechnicianBody,success: @escaping (newUserResponse) -> Void, failure: @escaping (String) -> Void) {
         let url: String = "technician/register"
         do{
             let jsonData = try JSONEncoder().encode(body)
@@ -23,8 +23,8 @@ class technicianApi {
                     let jsonString = String(data: result!, encoding: .utf8)
                     print("\n\n\(jsonString ?? "-")\n\n")
                     
-                    let userObj: User = try JSONDecoder()
-                        .decode(User.self, from: result!)
+                    let userObj: newUserResponse = try JSONDecoder()
+                        .decode(newUserResponse.self, from: result!)
                     
                     success(userObj)
                     

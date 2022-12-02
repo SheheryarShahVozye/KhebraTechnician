@@ -73,11 +73,11 @@ struct OrderConfirmationScreen: View {
                                     .scaledToFit()
                                     .opacity(0)
                                 
-                                Text((serviceManager.notificationOrder?.orderTime?.date ?? "") + " ")
+                                Text((serviceManager.notificationOrder?.scheduled?.date ?? "") + " ")
                                     .font(.system(size: 14))
                                     .fontWeight(.medium)
                                     .foregroundColor(Color("5A5A5A"))
-                                Text(serviceManager.notificationOrder?.orderTime?.time ?? "")
+                                Text(serviceManager.notificationOrder?.scheduled?.time ?? "")
                                     .font(.system(size: 14))
                                     .fontWeight(.medium)
                                     .foregroundColor(Color("5A5A5A"))

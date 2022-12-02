@@ -77,3 +77,8 @@ class User: Codable {
 
    
 }
+
+class newUserResponse : Codable {
+    public var newUser: User?
+    public var token: String?
+}

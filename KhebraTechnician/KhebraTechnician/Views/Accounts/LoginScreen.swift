@@ -58,15 +58,15 @@ struct LoginScreen: View {
                     }
                    
                     
-                    HStack{
-                        Text("Skip")
-                            .fontWeight(.regular)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("fontBlue"))
-                            .onTapGesture {
-                                viewRouter.currentPage = "DashboardScreen"
-                            }
-                    }.padding(.top)
+//                    HStack{
+//                        Text("Skip")
+//                            .fontWeight(.regular)
+//                            .font(.system(size: 16))
+//                            .foregroundColor(Color("fontBlue"))
+//                            .onTapGesture {
+//                                viewRouter.currentPage = "DashboardScreen"
+//                            }
+//                    }.padding(.top)
                     Spacer()
                     HStack{
                         Text("Don't have an account? ")
@@ -83,6 +83,7 @@ struct LoginScreen: View {
                                 viewRouter.currentPage = "SignUpScreen"
                             }
                     }.padding(.vertical,20)
+                        .padding(.bottom,30)
                     
                 }.padding(.horizontal,30)
             }
