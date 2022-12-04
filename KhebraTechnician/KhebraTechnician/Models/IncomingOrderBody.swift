@@ -16,14 +16,14 @@ class IncomingOrder: Codable {
     var location: Location?
     var postpone: Bool?
     var appliedTechnician: [String]?
-    var approve: Bool?
+    var approve,card: Bool?
     var _id: String?
     var orderNumber: Int?
     var customer: Customer?
     var orderTime: OrderTime?
     var onDemant: Bool?
     var status, moreDetails: String?
-    var url: String?
+    var url: [String]?
     var cash, assigned, isPaid: Bool?
     var address, service, serviceName: String?
     var totalPrice: Int?

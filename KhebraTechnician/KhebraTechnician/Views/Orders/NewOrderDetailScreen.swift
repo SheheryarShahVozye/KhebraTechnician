@@ -252,7 +252,7 @@ struct NewOrderDetailScreen: View {
                                         invoiceobj.spareParts = Int(costofSpare)
                                         invoiceobj.taxNumber = Int(taxNumber)
                                         invoiceobj.technicianFare = Int(technicianFare)
-                                        invoiceobj.url = ""
+                                       // invoiceobj.url = ""
                                         
                                         technicianApi.generateInvoice(orderId: serviceManager.selectedNewOrder?._id ?? "" , body: invoiceobj, success: { _ in
                                             showPreloader = false

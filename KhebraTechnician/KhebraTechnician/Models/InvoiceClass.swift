@@ -11,7 +11,8 @@ class InvoiceObject: Codable {
     var order: String?
      var taxNumber, technicianFare, spareParts, workFee: Int?
      var sparePartDelivery, totalPrice: Int?
-     var url, id, createdAt, updatedAt: String?
+     var  id, createdAt, updatedAt: String?
+    var url : [String]?
 }
 
 

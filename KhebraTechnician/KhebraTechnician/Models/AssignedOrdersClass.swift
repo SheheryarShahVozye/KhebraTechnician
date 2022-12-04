@@ -16,7 +16,7 @@ class AssignedOrderObjectElement: Codable {
     var orderNumber: Int?
     var customer: Customer?
     var createdAtTime, status, moreDetails: String?
-    var url: String?
+    var url: [String]?
     var approve, cash, assigned, isPaid: Bool?
     var address, service, serviceName: String?
     var totalPrice: Int?
