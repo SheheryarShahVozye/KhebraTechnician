@@ -397,6 +397,120 @@ class technicianApi {
         }
     }
     
+    public static func getTermsAndCondition(success: @escaping ([String]) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/terms-and-conditions"
+        do{
+           
+           
+            customerApi.get(url: url, completion: { result in
+                do {
+                    let jsonString = String(data: result!, encoding: .utf8)
+                    print("\n\n\(jsonString ?? "-")\n\n")
+                    
+                    let userObj: [String] = try JSONDecoder()
+                        .decode([String].self, from: result!)
+                    
+                    success(userObj)
+                    
+                } catch {
+                    print("\n\n\(error)\n at line \(#line)")
+                    print("\n\nError in decoding \(error.localizedDescription)\n")
+                    failure(Strings.requestApiError)
+                    // failure("Error in decoding")
+                }
+            }, incomplete: { incomp  in
+                failure(incomp)
+            })
+        }
+    }
+    
+    public static func getTechnicalTermsAndCondition(success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/technical-terms-and-conditions"
+        do{
+           
+           
+            customerApi.get(url: url, completion: { result in
+                do {
+                    let jsonString = String(data: result!, encoding: .utf8)
+                    print("\n\n\(jsonString ?? "-")\n\n")
+                    
+                    let userObj: String = try JSONDecoder()
+                        .decode(String.self, from: result!)
+                    
+                    success(userObj)
+                    
+                } catch {
+                    print("\n\n\(error)\n at line \(#line)")
+                    print("\n\nError in decoding \(error.localizedDescription)\n")
+                    failure(Strings.requestApiError)
+                    // failure("Error in decoding")
+                }
+            }, incomplete: { incomp  in
+                failure(incomp)
+            })
+        }
+    }
+    
+   
+  
+    
+    
+    
+    
+    public static func CoonectUs(success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/connectus"
+        do{
+           
+            customerApi.get(url: url, completion: { result in
+                do {
+                    let jsonString = String(data: result!, encoding: .utf8)
+                    print("\n\n\(jsonString ?? "-")\n\n")
+                    
+                    let userObj: String = try JSONDecoder()
+                        .decode(String.self, from: result!)
+                    
+                    success(userObj)
+                    
+                } catch {
+                    print("\n\n\(error)\n at line \(#line)")
+                    print("\n\nError in decoding \(error.localizedDescription)\n")
+                    failure(Strings.requestApiError)
+                    // failure("Error in decoding")
+                }
+            }, incomplete: { incomp  in
+                failure(incomp)
+            })
+        }
+    }
+    
+    public static func privacy(success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
+        let url: String = "technician/privacy"
+        do{
+           
+            customerApi.get(url: url, completion: { result in
+                do {
+                    let jsonString = String(data: result!, encoding: .utf8)
+                    print("\n\n\(jsonString ?? "-")\n\n")
+                    
+                    let userObj: String = try JSONDecoder()
+                        .decode(String.self, from: result!)
+                    
+                    success(userObj)
+                    
+                } catch {
+                    print("\n\n\(error)\n at line \(#line)")
+                    print("\n\nError in decoding \(error.localizedDescription)\n")
+                    failure(Strings.requestApiError)
+                    // failure("Error in decoding")
+                }
+            }, incomplete: { incomp  in
+                failure(incomp)
+            })
+        }
+    }
+    
+
+    
     public static func getIncomingOrders(success: @escaping ([IncomingOrder]) -> Void, failure: @escaping (String) -> Void) {
         let url: String = "technician/order/incoming?lat=33.72148&lng=73.04329&nearMe=25000000"
         customerApi.get(url: url,completion: { result in
