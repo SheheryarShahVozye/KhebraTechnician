@@ -452,11 +452,6 @@ class technicianApi {
     }
     
    
-  
-    
-    
-    
-    
     public static func CoonectUs(success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
         let url: String = "technician/connectus"
         do{

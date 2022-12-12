@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterPasswordScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var password: String = "qwerty"
+    @State var password: String = ""
     @State var confirmPassword: String = ""
     @State var showPreloader: Bool = false
     @State var togglepopup: Bool = false

@@ -81,6 +81,7 @@
 		183598AF292A270100DA2B70 /* InvoiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183598AE292A270100DA2B70 /* InvoiceClass.swift */; };
 		1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18511399290D111E00C7D011 /* SettingsBody.swift */; };
 		1851139C290D224400C7D011 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851139B290D224400C7D011 /* ChangePasswordScreen.swift */; };
+		18BDE7A429447ECB0045A6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18BDE7A229447ECB0045A6B6 /* Localizable.strings */; };
 		18E587D7291FE751005F43C4 /* ApplicationCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */; };
 		18E587D929202D3B005F43C4 /* NotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587D829202D3B005F43C4 /* NotificationObject.swift */; };
 		18E587DD2920EFA4005F43C4 /* OrderConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E587DC2920EFA4005F43C4 /* OrderConfirmationScreen.swift */; };
@@ -186,6 +187,7 @@
 		183598AE292A270100DA2B70 /* InvoiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceClass.swift; sourceTree = "<group>"; };
 		18511399290D111E00C7D011 /* SettingsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBody.swift; sourceTree = "<group>"; };
 		1851139B290D224400C7D011 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
+		18BDE7A329447ECB0045A6B6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18E587D6291FE751005F43C4 /* ApplicationCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCompleteScreen.swift; sourceTree = "<group>"; };
 		18E587D829202D3B005F43C4 /* NotificationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObject.swift; sourceTree = "<group>"; };
 		18E587DC2920EFA4005F43C4 /* OrderConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationScreen.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		14BBA2F729066EED00744DDC /* KhebraTechnician */ = {
 			isa = PBXGroup;
 			children = (
+				18BDE7A229447ECB0045A6B6 /* Localizable.strings */,
 				14BBA3252906713000744DDC /* Models */,
 				14BBA3242906700000744DDC /* Views */,
 				14BBA32329066FED00744DDC /* Utills */,
@@ -593,6 +596,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 14BBA2EC29066EED00744DDC;
 			productRefGroup = 14BBA2F629066EED00744DDC /* Products */;
@@ -612,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BBA30029066EF000744DDC /* Preview Assets.xcassets in Resources */,
+				18BDE7A429447ECB0045A6B6 /* Localizable.strings in Resources */,
 				14BBA2FD29066EF000744DDC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,6 +887,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		18BDE7A229447ECB0045A6B6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18BDE7A329447ECB0045A6B6 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		14BBA31729066EF000744DDC /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1006,7 +1022,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"KhebraTechnician/Preview Content\"";
 				DEVELOPMENT_TEAM = 37WPF58MK7;
 				ENABLE_PREVIEWS = YES;
@@ -1036,7 +1052,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"KhebraTechnician/Preview Content\"";
 				DEVELOPMENT_TEAM = 37WPF58MK7;
 				ENABLE_PREVIEWS = YES;

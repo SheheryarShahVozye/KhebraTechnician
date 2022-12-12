@@ -276,6 +276,7 @@ struct NewOrderDetailScreen: View {
                                         technicianApi.updateTechStatusToWay(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
                                             showPreloader = false
                                             serviceManager.selectedNewOrder?.technicianStatus?.order = "way"
+                                            viewRouter.goBack()
                                         }, failure: { _ in
                                             showPreloader = false
                                         })
@@ -291,6 +292,7 @@ struct NewOrderDetailScreen: View {
                                         technicianApi.updateTechStatusToArrive(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
                                             showPreloader = false
                                             serviceManager.selectedNewOrder?.technicianStatus?.order = "arrived"
+                                            viewRouter.goBack()
                                         }, failure: { _ in
                                             showPreloader = false
                                         })

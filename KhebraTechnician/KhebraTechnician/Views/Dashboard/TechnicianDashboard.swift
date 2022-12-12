@@ -12,6 +12,7 @@ struct TechnicianDashboard: View {
     @EnvironmentObject var serviceManager: ServiceManager
     @State var availableCheck: Bool = AppUtil.user?.available ?? false
     @State var incomingOrders: [IncomingOrder] = []
+    @State var showPreloader: Bool = false
     var body: some View {
         ZStack{
             VStack{
@@ -111,15 +112,35 @@ struct TechnicianDashboard: View {
                 BottomNavTechnician()
                 
             }
+            
+            if showPreloader {
+                VStack {}
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("B6BAC3"))
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("buttonbg")))
+                    .scaleEffect(x: 4, y: 4, anchor: .center)
+            }
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
             .task {
-                technicianApi.getIncomingOrders(success: { res in
-                    incomingOrders = res
+                showPreloader = true
+                technicianApi.getTechprofile(success: { res in
+                    AppUtil.TechProfile = res
+                    technicianApi.getIncomingOrders(success: { res in
+                        incomingOrders = res
+                        showPreloader = false
+                    }, failure: { _ in
+                        showPreloader = false
+                    })
                 }, failure: { _ in
-                    
+                    showPreloader = false
                 })
+               
             }
     }
 }

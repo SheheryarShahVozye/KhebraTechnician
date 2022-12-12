@@ -22,11 +22,26 @@ struct MoreCard: View {
                             Image(Imagename)
                                 .scaledToFit()
                         }.frame(width: 25, height: 25, alignment: .center)
-                      
-                        Text(name)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("5A5A5A"))
-                        
+                        if let language = UserDefaults.standard.value(forKey: Keys.language) as? String {
+                            if language == "ar" {
+                                Text(name.localized("ar"))
+                                    .font(.system(size: 16))
+                                    .foregroundColor(Color("5A5A5A"))
+                                
+                            } else {
+                                Text(name)
+                                    .font(.system(size: 16))
+                                    .foregroundColor(Color("5A5A5A"))
+                                
+                            }
+                        } else {
+                            Text(name)
+                                .font(.system(size: 16))
+                                .foregroundColor(Color("5A5A5A"))
+                            
+                        }
+
+                     
                         Spacer()
                         
                     }.padding(.leading,20)
@@ -68,9 +83,25 @@ struct MoreCardWallet: View {
                           
                             VStack{
                                 HStack {
-                                    Text(name)
-                                        .font(.system(size: 16))
-                                    .foregroundColor(Color("5A5A5A"))
+                                    if let language = UserDefaults.standard.value(forKey: Keys.language) as? String {
+                                        if language == "ar" {
+                                            Text(name.localized("ar"))
+                                                .font(.system(size: 16))
+                                            .foregroundColor(Color("5A5A5A"))
+                                            
+                                        } else {
+                                            Text(name)
+                                                .font(.system(size: 16))
+                                            .foregroundColor(Color("5A5A5A"))
+                                            
+                                        }
+                                    } else {
+                                        Text(name)
+                                            .font(.system(size: 16))
+                                        .foregroundColor(Color("5A5A5A"))
+                                        
+                                    }
+                                   
                                     
                                     Spacer()
                                 }
@@ -95,4 +126,15 @@ struct MoreCardWallet: View {
         }
         .frame(width: 155, height: 60, alignment: .center)
     }
+}
+
+extension String {
+    func localized(_ lang:String) ->String {
+        
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }
+    
 }

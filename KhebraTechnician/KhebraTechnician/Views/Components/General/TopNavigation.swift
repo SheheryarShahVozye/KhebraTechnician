@@ -29,11 +29,29 @@ struct TopNavigation: View {
                        
                         
                     Spacer()
-                    Text(titleText)
-                        .font(Font.custom("STC Bold", size: 18))
-                        .foregroundColor(Color(textColor))
-                        .fontWeight(.regular)
-                        .padding(.trailing,20)
+                    
+                    if let language = UserDefaults.standard.value(forKey: Keys.language) as? String {
+                        if language == "ar" {
+                            Text(titleText.localized("ar"))
+                                .font(Font.custom("STC Bold", size: 18))
+                                .foregroundColor(Color(textColor))
+                                .fontWeight(.regular)
+                                .padding(.trailing,20)
+                        } else {
+                            Text(titleText)
+                                .font(Font.custom("STC Bold", size: 18))
+                                .foregroundColor(Color(textColor))
+                                .fontWeight(.regular)
+                                .padding(.trailing,20)
+                        }
+                    } else {
+                        Text(titleText)
+                            .font(Font.custom("STC Bold", size: 18))
+                            .foregroundColor(Color(textColor))
+                            .fontWeight(.regular)
+                            .padding(.trailing,20)
+                    }
+                  
                         //.padding(.leading)
                        
                         //.offset(x:-10)

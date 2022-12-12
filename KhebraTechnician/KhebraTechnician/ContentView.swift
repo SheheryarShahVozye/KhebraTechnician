@@ -110,5 +110,6 @@ struct Keys {
     static let selectedLat = "selectedLat"
     static let token = "token"
     static let userID = "userID"
+    static let language = "en"
     
 }

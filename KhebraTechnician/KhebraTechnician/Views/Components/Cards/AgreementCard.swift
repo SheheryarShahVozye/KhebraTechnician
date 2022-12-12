@@ -23,11 +23,28 @@ struct AgreementCard: View {
                         Image(ImageName)
                             .scaledToFit()
                         
-                        Text(name)
-                            .font(.system(size: 16))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("fontBlue"))
-                            .padding(.leading)
+                        if let language = UserDefaults.standard.value(forKey: Keys.language) as? String {
+                            if language == "ar" {
+                                Text(name.localized("ar"))
+                                    .font(.system(size: 16))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color("fontBlue"))
+                                    .padding(.leading)
+                            } else {
+                                Text(name)
+                                    .font(.system(size: 16))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color("fontBlue"))
+                                    .padding(.leading)
+                            }
+                        } else {
+                            Text(name)
+                                .font(.system(size: 16))
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("fontBlue"))
+                                .padding(.leading)
+                        }
+                      
                         
                         Spacer()
                             

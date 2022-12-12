@@ -19,6 +19,9 @@ struct KhebraTechnicianApp: App {
                 .environmentObject(viewRouter)
                 .environmentObject(serviceManager)
                 .colorScheme(.light)
+                .environment(\.layoutDirection, (UserDefaults.standard.value(forKey: Keys.language) as? String? == "ar") ? .rightToLeft :  .leftToRight)
+                .environment(\.locale, .init(identifier: UserDefaults.standard.value(forKey: Keys.language) as? String ?? "en"))
+               
         }
     }
 }

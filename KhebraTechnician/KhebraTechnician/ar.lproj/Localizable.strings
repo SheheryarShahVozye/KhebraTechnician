@@ -1,0 +1,250 @@
+/* No comment provided by engineer. */
+"Accept" = "قبول";
+
+/* No comment provided by engineer. */
+"Address" = "العنوان";
+
+/* No comment provided by engineer. */
+"Applied Successfully" = "تم تقديم الطلب بنجاح";
+
+/* No comment provided by engineer. */
+"Apply for orders" = "التقدم للطلبات";
+
+/* No comment provided by engineer. */
+"Apply now" = "تقدم للطلب";
+
+/* No comment provided by engineer. */
+"Arrive on time" = "الوصول في الوقت المحدد";
+
+/* No comment provided by engineer. */
+"Arrived late" = "وصول متأخر";
+
+/* No comment provided by engineer. */
+"Available" = "متواجد";
+
+/* No comment provided by engineer. */
+"Balance" = "الرصيد";
+
+/* No comment provided by engineer. */
+"Call Customer" = "اتصل بالعميل";
+
+/* No comment provided by engineer. */
+"Change password" = "تغيير كلمة المرور";
+
+/* No comment provided by engineer. */
+"Change Password" = "تغيير كلمة المرور";
+
+/* No comment provided by engineer. */
+"City" = "المدينة";
+
+/* No comment provided by engineer. */
+"Commercial Registration No" = "رقم السجل التجاري";
+
+/* No comment provided by engineer. */
+"Completed" = "الطلبات المكتملة";
+
+/* No comment provided by engineer. */
+"Completed orders" = "إكمال الطلبات";
+
+/* No comment provided by engineer. */
+"Customer" = "العميل";
+
+/* No comment provided by engineer. */
+"Date of Birth" = "تاريخ الميلاد";
+
+/* No comment provided by engineer. */
+"Deferred" = "الطلبات المؤجلة";
+
+/* No comment provided by engineer. */
+"Forgot Your Password?" = "نسيت كلمة المرور";
+
+/* No comment provided by engineer. */
+"High price" = "سعر مرتفع";
+
+/* No comment provided by engineer. */
+"High rating" = "تقييم مرتفع";
+
+/* No comment provided by engineer. */
+"Home" = "الرئيسية";
+
+/* No comment provided by engineer. */
+"ID/Iqama No." = "رقم الهوية أو الإقامة";
+
+/* No comment provided by engineer. */
+"Incoming Order" = "الطلب الحالي";
+
+/* No comment provided by engineer. */
+"Invoice No." = "رقم الفاتورة";
+
+/* No comment provided by engineer. */
+"Language" = "اللغة";
+
+/* No comment provided by engineer. */
+"Login" = "تسجيل الدخول";
+
+/* No comment provided by engineer. */
+"Low rating" = "تقييم منخفض";
+
+/* No comment provided by engineer. */
+"Mobile No." = "رقم الجوال";
+
+/* No comment provided by engineer. */
+"More" = "المزيد";
+
+/* No comment provided by engineer. */
+"My Invoices list" = "قائمة فواتيري";
+
+/* No comment provided by engineer. */
+"Name" = "الاسم";
+
+/* No comment provided by engineer. */
+"New Order" = "الطلبات الجديدة";
+
+/* No comment provided by engineer. */
+"Notifications" = "الإشعارات";
+
+/* No comment provided by engineer. */
+"Order Location" = "موقع الطلب";
+
+/* No comment provided by engineer. */
+"Order No" = "رقم الطلب";
+
+/* No comment provided by engineer. */
+"Orders" = "الطلبات";
+
+/* No comment provided by engineer. */
+"Paid" = "تم الدفع";
+
+/* No comment provided by engineer. */
+"Paid Cash" = "تم الدفع نقداً";
+
+/* No comment provided by engineer. */
+"Payment Method" = "طريقة الدفع";
+
+/* No comment provided by engineer. */
+"Payment status" = "حالة الدفع";
+
+/* No comment provided by engineer. */
+"Please choose:" = "الرجاء الاختيار";
+
+/* No comment provided by engineer. */
+"Please enter the amount (SAR)" = "أدخل المبلغ (ريال)";
+
+/* No comment provided by engineer. */
+"Please enter the cost of spare parts (if any)" = "أدخل تكلفة قطع الغيار إن وجدت";
+
+/* No comment provided by engineer. */
+"Please enter the cost of spare parts delivery (if any)" = "أدخل تكلفة توصيل قطع الغيار إن وجدت  ";
+
+/* No comment provided by engineer. */
+"Please enter the mobile number" = "أدخل رقم الجوال";
+
+/* No comment provided by engineer. */
+"Please enter the work fee without VAT" = "أدخل أجرة العمل بدون ضريبة القيمة المضافة";
+
+/* No comment provided by engineer. */
+"Please upload the spare parts invoice" = "تحميل صورة فاتورة قطع الغيار";
+
+/* No comment provided by engineer. */
+"Postponement ends" = "ينتهي التأجيل";
+
+/* No comment provided by engineer. */
+"Recharge using another mobile number" = "اشحن رصيدك باستخدام رقم جوال آخر";
+
+/* No comment provided by engineer. */
+"Reject" = "رفض";
+
+/* No comment provided by engineer. */
+"Request from the customer to cancel the order" = "مطالبة العميل بإلغاء الطلب";
+
+/* No comment provided by engineer. */
+"Service" = "الخدمة";
+
+/* No comment provided by engineer. */
+"Suspend the account for one day" = "تعليق الحساب ليوم واحد";
+
+/* No comment provided by engineer. */
+"Terms and Conditions" = "الشروط والأحكام";
+
+/* No comment provided by engineer. */
+"The customer has sent you order Request" = "لقد أرسل لك العميل الطلب";
+
+/* No comment provided by engineer. */
+"Total amount" = "إجمالي المبلغ";
+
+/* No comment provided by engineer. */
+"Transfer the amount to Stc Pay" = "حول المبلغ إلى STC Pay";
+
+/* No comment provided by engineer. */
+"Transfer the amount to your balance in the app" = "حول المبلغ إلى رصيدك في التطبيق";
+
+/* No comment provided by engineer. */
+"Upload File" = "تحميل الفاتورة";
+
+/* No comment provided by engineer. */
+"Upload photo ID" = "تحميل صورة الهوية";
+
+/* No comment provided by engineer. */
+"Upload the commercial register" = "تحمبل السجل التجاري";
+
+/* No comment provided by engineer. */
+"Various cancellation rates" = "معدلات الإلغاء المختلفة";
+
+/* No comment provided by engineer. */
+"Work perfiction" = "اتقان العمل";
+
+/* No comment provided by engineer. */
+"You can now withdraw your income through STC Pay" = "بإمكانك الآن سحب دخلك  عن طريق STC Pay";
+
+/* No comment provided by engineer. */
+"You have successfully applied for the Order. The customer will get in touch" = "تم تقديم الطلب بنجاح.سوف يتواصل معك العميل وبإمكانك التواصل معه";
+
+/* No comment provided by engineer. */
+"Your current income is:" = "دخلك الحالي هو";
+
+"Profile"="الملف الشخصي";
+
+
+"Notification"="الإشعارات";
+
+
+"Income"="الدخل";
+
+
+"Recharge"="شحن الرصيد";
+
+
+"Statistics"="الإحصائيات";
+
+
+"Work Controls"="ضوابط العمل";
+
+
+"Rating"="التقييم";
+
+
+"Prices"="الأسعار";
+
+
+"Connect Us"="تواصل معنا";
+
+
+"How to use"="طريقة الاستخدام";
+
+
+"Settings"="الإعدادات";
+
+
+"Share"="المشاركة";
+
+
+"Invoices"="الفواتير";
+
+
+"Logout"="تسجيل الخروج";
+
+
+"Rating factors"="عوامل التصنيف";
+
+
+"Setting"="الإعدادات";

@@ -33,10 +33,28 @@ struct OrderButton: View {
             .foregroundColor(Color("buttonbg"))
             .frame(width: 225, height: 50, alignment: .center)
             .overlay(
+                HStack{
+                    if let language = UserDefaults.standard.value(forKey: Keys.language) as? String {
+                        if language == "ar" {
+                            Text(title.localized("ar"))
+                                .font(.system(size: 16))
+                                .foregroundColor(Color("White"))
+                                .fontWeight(.semibold)
+                        } else {
+                            Text(title)
+                                .font(.system(size: 16))
+                                .foregroundColor(Color("White"))
+                                .fontWeight(.semibold)
+                        }
+                    } else {
                         Text(title)
                             .font(.system(size: 16))
                             .foregroundColor(Color("White"))
                             .fontWeight(.semibold)
+                    }
+                 
+                }
+                       
             ).onTapGesture {
                 callback()
             }
