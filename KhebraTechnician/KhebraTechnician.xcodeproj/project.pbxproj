@@ -79,6 +79,7 @@
 		14C333C7290BBE5C00A496B5 /* IncomingOrderBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */; };
 		14C333C9290C463D00A496B5 /* TechnicianProfileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */; };
 		183598AF292A270100DA2B70 /* InvoiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183598AE292A270100DA2B70 /* InvoiceClass.swift */; };
+		184B67442948A4880096739D /* ConnectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B67432948A4880096739D /* ConnectScreen.swift */; };
 		1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18511399290D111E00C7D011 /* SettingsBody.swift */; };
 		1851139C290D224400C7D011 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851139B290D224400C7D011 /* ChangePasswordScreen.swift */; };
 		18BDE7A429447ECB0045A6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18BDE7A229447ECB0045A6B6 /* Localizable.strings */; };
@@ -185,6 +186,7 @@
 		14C333C6290BBE5C00A496B5 /* IncomingOrderBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingOrderBody.swift; sourceTree = "<group>"; };
 		14C333C8290C463D00A496B5 /* TechnicianProfileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianProfileObject.swift; sourceTree = "<group>"; };
 		183598AE292A270100DA2B70 /* InvoiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceClass.swift; sourceTree = "<group>"; };
+		184B67432948A4880096739D /* ConnectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectScreen.swift; sourceTree = "<group>"; };
 		18511399290D111E00C7D011 /* SettingsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBody.swift; sourceTree = "<group>"; };
 		1851139B290D224400C7D011 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		18BDE7A329447ECB0045A6B6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				14BBA382290678F400744DDC /* TechMoreScreen.swift */,
 				14BBA37F290678F400744DDC /* TechProfileScreen.swift */,
 				1851139B290D224400C7D011 /* ChangePasswordScreen.swift */,
+				184B67432948A4880096739D /* ConnectScreen.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				14BBA379290678E800744DDC /* DeferredOrderScreen.swift in Sources */,
 				18E587D929202D3B005F43C4 /* NotificationObject.swift in Sources */,
 				14BBA3632906772A00744DDC /* MapView.swift in Sources */,
+				184B67442948A4880096739D /* ConnectScreen.swift in Sources */,
 				14BBA388290678F400744DDC /* SettingScreen.swift in Sources */,
 				1851139A290D111E00C7D011 /* SettingsBody.swift in Sources */,
 				14BBA376290678E800744DDC /* NewInvoiceScreen.swift in Sources */,

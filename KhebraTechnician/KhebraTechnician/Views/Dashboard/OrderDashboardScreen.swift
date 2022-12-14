@@ -215,7 +215,7 @@ struct OrderDashboardScreen: View {
                                                     serviceName: defferedOrders[item].serviceName ?? "")
                                     .onTapGesture{
                                         serviceManager.selectedNewOrder = defferedOrders[item]
-                                        viewRouter.currentPage = "NewOrderDetailScreen"
+                                        viewRouter.currentPage = "DeferredOrderScreen"
                                     }
                             }
                         } else {
@@ -225,7 +225,7 @@ struct OrderDashboardScreen: View {
                                                     serviceName: completedOrders[item].serviceName ?? "")
                                     .onTapGesture{
                                         serviceManager.selectedNewOrder = completedOrders[item]
-                                        viewRouter.currentPage = "NewOrderDetailScreen"
+                                        viewRouter.currentPage = "CompletedOrderScreen"
                                     }
                             }
                         }

@@ -6,9 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DeferredOrderScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var serviceManager: ServiceManager
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    @State var showPreloader: Bool = false
+    @State var isssueInvoice: Bool = false
+    @State var workfee: String = ""
+    @State var costofSpare: String = ""
+    @State var sparePartDelivery: String = ""
+    @State var taxNumber: String = ""
+    @State var technicianFare: String = ""
+    
     var body: some View {
         ZStack{
             VStack{
@@ -16,7 +27,7 @@ struct DeferredOrderScreen: View {
                 
                 ScrollView{
                     VStack{
-                        OrderNumCard()
+                        OrderNumCard(orderNumber: String(serviceManager.selectedNewOrder?.orderNumber ?? 0 ))
                         HStack{
                             VStack{
                                 HStack{
@@ -45,8 +56,10 @@ struct DeferredOrderScreen: View {
                                 .padding(.top,20)
                         }
                         VStack{
-                            Image("MapSmall")
-                                .resizable()
+
+                            
+                            Map(coordinateRegion: $region)
+                                    
                                
                             
                         }.frame(width: UIScreen.main.bounds.width - 50, height: 180, alignment: .center)
@@ -70,7 +83,7 @@ struct DeferredOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("Mohammed Abed ElAzizi")
+                                        Text(serviceManager.selectedNewOrder?.customer?.name ?? "")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
@@ -95,42 +108,23 @@ struct DeferredOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("6/6/2022, 05:30 PM")
+                                        Text(serviceManager.selectedNewOrder?.scheduled?.time ?? "")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
+                                        
+                                        Text(" " + (AppUtil.getDateOnly(format: "", dateValue: serviceManager.selectedNewOrder?.scheduled?.date ?? "") ))
+                                            .font(.system(size: 14))
+                                            .fontWeight(.medium)
+                                            .foregroundColor(Color("5A5A5A"))
+                                        
                                         Spacer()
                                     }.padding(.top,1)
                                 }.padding(.horizontal,5)
                             }.padding(.horizontal,20)
                             HStack{
                                 VStack {
-                                    Image("time")
-                                        .resizable()
-                                        .frame(width: 15, height: 15, alignment: .center)
-                                        .scaledToFit()
-                                    Spacer()
-                                }
-                                VStack{
-                                    HStack{
-                                        Text("Postponement ends")
-                                            .font(.system(size: 14))
-                                            .fontWeight(.medium)
-                                            .foregroundColor(Color("B2C1E3"))
-                                        Spacer()
-                                    }
-                                    HStack{
-                                        Text("6/6/2022, 05:30 PM")
-                                            .font(.system(size: 14))
-                                            .fontWeight(.medium)
-                                            .foregroundColor(Color("5A5A5A"))
-                                        Spacer()
-                                    }.padding(.top,1)
-                                }.padding(.horizontal,5)
-                            }.padding(.horizontal,20)
-                            HStack{
-                                VStack {
-                                    Image("time")
+                                    Image("address")
                                         .resizable()
                                         .frame(width: 15, height: 15, alignment: .center)
                                         .scaledToFit()
@@ -145,7 +139,7 @@ struct DeferredOrderScreen: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("As Sahafah, Olaya St. 6531, 3059 Riyadh 13321, Saudi Arabia")
+                                        Text(serviceManager.selectedNewOrder?.address ?? "")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundColor(Color("5A5A5A"))
@@ -153,7 +147,6 @@ struct DeferredOrderScreen: View {
                                     }.padding(.top,1)
                                 }.padding(.horizontal,5)
                             }.padding(.horizontal,20)
-                            
                         }
                         .padding(.top)
                         
@@ -179,7 +172,13 @@ struct DeferredOrderScreen: View {
                                 }.frame(width: UIScreen.main.bounds.width - 75, height: 50, alignment: .center)
                               
                                 
+                            } .onTapGesture {
+                                let telephone = "tel://"
+                                let formattedString = telephone + (serviceManager.selectedNewOrder?.customer?.phone ?? "")
+                                guard let url = URL(string: formattedString) else { return }
+                                UIApplication.shared.open(url)
                             }
+                            
                         }.padding(.vertical,20)
                     }
                 }
@@ -189,6 +188,11 @@ struct DeferredOrderScreen: View {
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            .task{
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0,
+                                                                           longitude:serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0),
+                                            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+            }
     }
 }
 

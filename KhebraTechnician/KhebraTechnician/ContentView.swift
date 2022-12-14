@@ -97,6 +97,8 @@ struct RouteManager: View {
             ApplicationCompleteScreen()
         } else if viewRouter.currentPage == "OrderConfirmationScreen" {
             OrderConfirmationScreen()
+        } else if viewRouter.currentPage == "ConnectScreen" {
+            ConnectScreen()
         }
         
     }
