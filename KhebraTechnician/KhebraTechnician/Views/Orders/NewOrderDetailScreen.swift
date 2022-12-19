@@ -10,7 +10,6 @@ import MapKit
 struct NewOrderDetailScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var serviceManager: ServiceManager
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     @State var showPreloader: Bool = false
     @State var isssueInvoice: Bool = false
     @State var workfee: String = ""
@@ -18,6 +17,11 @@ struct NewOrderDetailScreen: View {
     @State var sparePartDelivery: String = ""
     @State var taxNumber: String = ""
     @State var technicianFare: String = ""
+    @State var showPostponement: Bool = false
+    @State var showError: Bool = false
+    @State var showMessage: String = ""
+    @State var orderDate: Date = Date()
+    @State var orderTime: Date = Date()
     var body: some View {
         ZStack{
             VStack{
@@ -56,7 +60,7 @@ struct NewOrderDetailScreen: View {
                         VStack{
 
                             
-                            Map(coordinateRegion: $region)
+                           GoogleMapsView(longitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0, latitude: serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0)
                                     
                                
                             
@@ -257,8 +261,10 @@ struct NewOrderDetailScreen: View {
                                         technicianApi.generateInvoice(orderId: serviceManager.selectedNewOrder?._id ?? "" , body: invoiceobj, success: { _ in
                                             showPreloader = false
                                             viewRouter.goBack()
-                                        }, failure:  { _ in
+                                        }, failure:  { f in
+                                            showMessage = f
                                             showPreloader = false
+                                            showError.toggle()
                                         })
                                     })
                                 }.padding(.vertical,20)
@@ -268,33 +274,41 @@ struct NewOrderDetailScreen: View {
                         }
                         
                         
-                        if serviceManager.selectedNewOrder?.technicianStatus?.order == "received" {
+                        if (serviceManager.selectedNewOrder?.technicianStatus?.count ?? 0) > 0 && (serviceManager.selectedNewOrder?.technicianStatus?.count ?? 0) < 2 {
                             VStack{
                                 NewOrderButton(title: "On the Way")
                                     .onTapGesture{
                                         showPreloader = true
-                                        technicianApi.updateTechStatusToWay(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
+                                        technicianApi.updateTechStatusToWay(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { res in
                                             showPreloader = false
-                                            serviceManager.selectedNewOrder?.technicianStatus?.order = "way"
+                                          //  serviceManager.selectedNewOrder = res.order
+                                           // serviceManager.selectedNewOrder?.technicianStatus?.order = "way"
                                             viewRouter.goBack()
-                                        }, failure: { _ in
+                                        }, failure: { f in
+                                            showMessage = f
                                             showPreloader = false
+                                            showError.toggle()
                                         })
                                     }
                             }
+                            
+                            
                         }
                         
-                        if serviceManager.selectedNewOrder?.technicianStatus?.order == "way" {
+                        if (serviceManager.selectedNewOrder?.technicianStatus?.count ?? 0) > 1 && (serviceManager.selectedNewOrder?.technicianStatus?.count ?? 0) < 3 {
                             VStack{
                                 NewOrderButton(title: "Arrived")
                                     .onTapGesture{
                                         showPreloader = true
                                         technicianApi.updateTechStatusToArrive(orderId: serviceManager.selectedNewOrder?._id ?? "", success: { _ in
                                             showPreloader = false
-                                            serviceManager.selectedNewOrder?.technicianStatus?.order = "arrived"
+                                            //serviceManager.selectedNewOrder?.technicianStatus?.order = "arrived"
                                             viewRouter.goBack()
-                                        }, failure: { _ in
+                                        }, failure: { f in
+                                            showMessage = f
                                             showPreloader = false
+                                            showError.toggle()
+                                           
                                         })
                                     }
                             }
@@ -312,7 +326,16 @@ struct NewOrderDetailScreen: View {
                                             isssueInvoice.toggle()
                                         }
                                     NewOrderButton(title: "Postponement Request")
+                                        .onTapGesture{
+                                            showPostponement.toggle()
+                                        }
                                     NewOrderButton(title: "Call Customer")
+                                        .onTapGesture {
+                                            let telephone = "tel://"
+                                            let formattedString = telephone + (serviceManager.selectedNewOrder?.customer?.phone ?? "")
+                                            guard let url = URL(string: formattedString) else { return }
+                                            UIApplication.shared.open(url)
+                                        }
                                 }
                             }.padding(.vertical)
                         }
@@ -332,15 +355,132 @@ struct NewOrderDetailScreen: View {
                     .progressViewStyle(CircularProgressViewStyle(tint: Color("buttonbg")))
                     .scaleEffect(x: 4, y: 4, anchor: .center)
             }
+            
+            if showPostponement {
+                VStack {}
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("B6BAC3"))
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+                
+                VStack{
+                    VStack{
+                        
+                        HStack{
+                           Spacer()
+                            Text("Order Postponement")
+                                .foregroundColor(Color("fontBlue"))
+                                .font(.system(size: 17))
+                                .fontWeight(.bold)
+                                .padding(10)
+                            Spacer()
+                        }
+                        
+                       
+                        HStack{
+                            Text("Select Date & Time")
+                                .font(.system(size: 16))
+                                .foregroundColor(Color("fontBlue"))
+                                .fontWeight(.light)
+                                .padding(.top,5)
+                        }
+                        
+                        
+                        HStack{
+                            Spacer()
+                            VStack{
+                                HStack{
+                                    Text("Time")
+                                        .font(.system(size: 16))
+                                        .foregroundColor(Color("fontBlue"))
+                                        .fontWeight(.light)
+                                        .padding(.top,5)
+                                    
+                                    Spacer()
+                                }
+                                HStack{
+                                    Spacer()
+                                    Image("ondemand")
+                                        .scaledToFit()
+                                    DatePicker(selection: $orderTime,displayedComponents: .hourAndMinute, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
+                                        .labelsHidden()
+                                    
+                                    
+                                    Spacer()
+                                }.padding(.vertical,10)
+                                    .padding(.horizontal,10)
+                                    .background(Color("White"))
+                                    .border(Color("B2C1E3").opacity(0.6))
+                            }
+                            
+                            
+                            Group{
+                                VStack{
+                                    HStack{
+                                        Text("Date")
+                                            .font(.system(size: 16))
+                                            .foregroundColor(Color("fontBlue"))
+                                            .fontWeight(.light)
+                                            .padding(.top,5)
+                                        
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        Spacer()
+                                        Image("appointment")
+                                            .scaledToFit()
+                                        DatePicker(selection: $orderDate ,displayedComponents: .date, label: { Text("Date") })
+                                            .labelsHidden()
+                                        Spacer()
+                                    }.padding(.vertical,10)
+                                        .padding(.horizontal,10)
+                                        .background(Color("White"))
+                                        .border(Color("B2C1E3").opacity(0.6))
+                                }
+                                
+                            }.offset(x:-10)
+                            
+                            Spacer()
+                            
+                            
+                            
+                        }.frame(width: UIScreen.main.bounds.width - 50)
+                    }
+                    .padding(.top,10)
+                    
+                    
+                    
+                    
+                    OrderButton(title: "Send Request", callback: {
+                        let body = postponementRequest()
+                        body.date = AppUtil.getPostDateString(orderDate)
+                        body.time = AppUtil.getAmPmTime(orderTime)
+                        showPostponement = false
+                        technicianApi.postponeOrder(serviceManager.selectedNewOrder?._id ?? "",body, success: { _ in
+                            showPostponement = false
+                            viewRouter.goBack()
+                        }, failure: { f in
+                            showPostponement = false
+                            showMessage = f
+                            showError.toggle()
+
+                        })
+                    }).padding(.top)
+                    Spacer()
+                }.frame(width: UIScreen.main.bounds.width - 20,
+                        height: 300, alignment: .center)
+                    .background(Color("White"))
+            }
+            
+            
+            if showError {
+                errorDialogBox(message: showMessage,error: $showError)
+            }
           
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
-            .task{
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0,
-                                                                           longitude:serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0),
-                                            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
-            }
+            
     }
 }
 

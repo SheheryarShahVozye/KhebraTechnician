@@ -57,7 +57,8 @@ struct IncomingOrderScreen: View {
 //                            Image("MapSmall")
 //                                .resizable()
                             
-                            Map(coordinateRegion: $region)
+                            
+                         GoogleMapsView(longitude: serviceManager.selectedIncomingOrder?.location?.coordinates?[0] ?? 0.0, latitude: serviceManager.selectedIncomingOrder?.location?.coordinates?[1] ?? 0.0)
                                       //  .frame(width: 400, height: 300)
                                
                             

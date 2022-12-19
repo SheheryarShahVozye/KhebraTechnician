@@ -9,7 +9,16 @@ import Foundation
 
 
 class ProfilePostBody: Codable {
-   public var name, email, phone,idNumber,commercialRegistraionNumber,url,urls: String?
+   public var name, email, phone,idNumber,commercialRegistrationNumber,url,urls: String?
+
+   
+}
+
+class ErrorObject: Codable {
+    var code: Int?
+    var msg: String?
+    var success: Bool?
+    var error: String?
 
    
 }

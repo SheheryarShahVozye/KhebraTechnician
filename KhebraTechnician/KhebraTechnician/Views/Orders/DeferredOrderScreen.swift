@@ -58,7 +58,7 @@ struct DeferredOrderScreen: View {
                         VStack{
 
                             
-                            Map(coordinateRegion: $region)
+                            GoogleMapsView(longitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0, latitude: serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0)
                                     
                                
                             

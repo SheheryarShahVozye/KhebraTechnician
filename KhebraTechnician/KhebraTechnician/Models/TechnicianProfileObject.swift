@@ -20,7 +20,7 @@ class TechnicianProfile: Codable {
    // var ipInfo: IPInfo?
     var lastLocation: LastLocation?
     var reviews: [String]?
-    var createdAt, updatedAt,name, email,idNumber,commercialRegistraionNumber,url: String?
+    var createdAt, updatedAt,name, email,idNumber,commercialRegistrationNumber,url: String?
     var balance: Int?
     var urls: [String]?
     var city: String?

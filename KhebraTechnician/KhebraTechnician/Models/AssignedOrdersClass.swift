@@ -23,7 +23,7 @@ class AssignedOrderObjectElement: Codable {
     public var couponCode, createdAt, updatedAt: String?
     public var __v: Int?
     public var assignedTo: TechnicianProfile?
-    public var technicianStatus: TechnicianStatus?
+    public var technicianStatus: [TechnicianStatus]?
     public var invoice: Invoice?
     public var moyasarPaymentID: String?
 }

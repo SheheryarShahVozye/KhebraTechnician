@@ -13,8 +13,11 @@ struct TechProfileScreen: View {
     @State var email: String = AppUtil.TechProfile?.email ?? ""
     @State var mobileNo: String = AppUtil.TechProfile?.phone ?? ""
     @State var address: String = AppUtil.TechProfile?.city ?? ""
-    @State var commercialId: String = AppUtil.TechProfile?.commercialRegistraionNumber ?? ""
+    @State var commercialId: String = AppUtil.TechProfile?.commercialRegistrationNumber ?? ""
     @State var regId: String = ""
+    @State var showError: Bool =  false
+    @State var showMessage: String =  ""
+    @State var showPreloader: Bool = false
     var body: some View {
         ZStack{
             VStack{
@@ -165,18 +168,22 @@ struct TechProfileScreen: View {
                         
                         
                         OrderButton(title: "Save", callback: {
+                            showPreloader = true
                             let customerprofile = ProfilePostBody()
                             //   customerprofile.address = address
                             customerprofile.name = name
                             customerprofile.email = email
                             customerprofile.phone = mobileNo
-                            customerprofile.commercialRegistraionNumber = commercialId
+                            customerprofile.commercialRegistrationNumber = commercialId
                             customerprofile.idNumber = regId
                             
                             technicianApi.updateTechnician(customerprofile, success: { res in
-                                //  AppUtil.user = res
+                                showPreloader = false
                                 viewRouter.goBack()
-                            }, failure: { _ in
+                            }, failure: { f in
+                                showPreloader = false
+                                showMessage = f
+                                showError.toggle()
                                 
                             })
                         }).padding(.vertical)
@@ -186,22 +193,74 @@ struct TechProfileScreen: View {
                     
                 }
             }
+            
+            if showPreloader {
+                VStack {}
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("B6BAC3"))
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("buttonbg")))
+                    .scaleEffect(x: 4, y: 4, anchor: .center)
+            }
+            
+            if showError {
+                errorDialogBox(message: showMessage,error: $showError)
+            }
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
+            
             .onAppear(perform: {
                 name = AppUtil.TechProfile?.name ?? ""
                 email = AppUtil.TechProfile?.email ?? ""
-                mobileNo = AppUtil.user?.phone ?? ""
-                address = AppUtil.user?.address ?? ""
+                mobileNo = AppUtil.TechProfile?.phone ?? ""
+               // address = AppUtil.TechProfile?.address ?? ""
                 regId = AppUtil.TechProfile?.idNumber ?? ""
-                commercialId = AppUtil.TechProfile?.commercialRegistraionNumber ?? ""
+                commercialId = AppUtil.TechProfile?.commercialRegistrationNumber ?? ""
             })
     }
 }
 
-struct TechProfileScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        TechProfileScreen()
+struct errorDialogBox: View {
+    var message: String
+    @Binding var error: Bool
+    var body: some View{
+        ZStack{
+            VStack {}
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color("B6BAC3"))
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.6)
+
+
+            
+            VStack{
+                
+               
+
+                HStack{
+                    Text(message)
+                        .font(.system(size: 16))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("5F5E5E"))
+                        .multilineTextAlignment(.center)
+                        
+                }.padding(.horizontal)
+              
+            }.frame(width: UIScreen.main.bounds.width - 50,height: 200)
+                .cornerRadius(10)
+                .background(Color("FAFCFF"))
+                .border(Color("5F5E5E"))
+               
+            
+        }
+        .onTapGesture {
+            error.toggle()
+        }
     }
+    
 }
+

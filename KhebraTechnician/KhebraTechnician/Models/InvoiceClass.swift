@@ -18,6 +18,8 @@ class InvoiceObject: Codable {
 
 class TechnicianStatus: Codable {
     var timing: OrderTime?
-    var order: String?
+    var title: String?
+    var status: Bool?
+    var _id: String?
 
 }

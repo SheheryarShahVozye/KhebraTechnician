@@ -61,3 +61,9 @@ class PaymentMethod: Codable {
 
   
 }
+
+
+class postponementRequest:  Codable {
+    public var time: String?
+    public var date: String?
+}

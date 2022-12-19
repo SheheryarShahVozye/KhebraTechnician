@@ -57,7 +57,9 @@ struct CompletedOrderScreen: View {
                                 .padding(.top,20)
                         }
                         VStack{
-                            Map(coordinateRegion: $region)
+                            
+                            GoogleMapsView(longitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0, latitude: serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0)
+                         //   Map(coordinateRegion: $region)
                             
                         }.frame(width: UIScreen.main.bounds.width - 50, height: 180, alignment: .center)
                             .padding(.vertical,10)
@@ -261,8 +263,9 @@ struct CompletedOrderScreen: View {
             .ignoresSafeArea(.all)
             .background(Color("appbg"))
             .task{
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0,
-                                                                           longitude:serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0),
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(
+                    latitude: serviceManager.selectedNewOrder?.location?.coordinates?[0] ?? 0.0,
+                     longitude: serviceManager.selectedNewOrder?.location?.coordinates?[1] ?? 0.0),
                                             span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
             }
     }
